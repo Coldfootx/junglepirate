@@ -1,5 +1,5 @@
 # junglepirate
-A free and easy-going multiplayer 2D building CTF game for Windows, Linux and Mac
+A free and easy-going multiplayer 2D building & crafting CTF game for Windows, Linux and Mac
 
 This is a Gdevelop project. Open it in your Gdevelop.
 
