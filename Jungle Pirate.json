@@ -241,7 +241,18 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "server_map",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "server_max_players",
+      "type": "number",
+      "value": 64
+    }
+  ],
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

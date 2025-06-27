@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.4790395861757493,
+    "zoomFactor": 0.4057518905943857,
     "windowMask": false
   },
   "objectsGroups": [
@@ -27,18 +27,7 @@
       "objects": []
     }
   ],
-  "variables": [
-    {
-      "name": "max_players",
-      "type": "number",
-      "value": 64
-    },
-    {
-      "name": "current_level",
-      "type": "number",
-      "value": 2
-    }
-  ],
+  "variables": [],
   "instances": [
     {
       "angle": 0,
@@ -817,7 +806,7 @@
           },
           "parameters": [
             "",
-            "\"Level\" + current_level",
+            "\"Level\" + server_map",
             "0",
             "0",
             "0"
