@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4057518905943857,
+    "zoomFactor": 0.4194339782759094,
     "windowMask": false
   },
   "objectsGroups": [
@@ -27,7 +27,18 @@
       "objects": []
     }
   ],
-  "variables": [],
+  "variables": [
+    {
+      "name": "coin_number",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "player_id",
+      "type": "number",
+      "value": 0
+    }
+  ],
   "instances": [
     {
       "angle": 0,
@@ -50,9 +61,10 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 0.9948792977322605,
+      "depth": 1,
       "height": 720,
       "layer": "Background",
+      "locked": true,
       "name": "FallTreesBackground",
       "persistentUuid": "297e6925-7418-400f-ad77-49a9565c3436",
       "width": 1400,
@@ -244,7 +256,13 @@
       "name": "Coins",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
@@ -342,7 +360,13 @@
       "preScale": 4.8,
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 1
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
@@ -475,7 +499,13 @@
       "preScale": 4,
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 2
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
@@ -708,6 +738,17 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Unnamed",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": []
     }
   ],
   "objectsFolderStructure": {
@@ -730,6 +771,9 @@
       },
       {
         "objectName": "Necromancer"
+      },
+      {
+        "objectName": "Unnamed"
       }
     ]
   },
@@ -771,6 +815,100 @@
             "80",
             "RandomFloatInRange(1,1.1)"
           ]
+        },
+        {
+          "type": {
+            "value": "P2P::SendToAllVariable"
+          },
+          "parameters": [
+            "\"collect_coin\"",
+            "coin_number"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "P2P::OnEvent"
+          },
+          "parameters": [
+            "\"collect_coin\"",
+            "no"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "P2P::GetEventVariable"
+          },
+          "parameters": [
+            "\"collect_coin\"",
+            "coin_number"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Coins",
+                "id",
+                "=",
+                "coin_number"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "Players",
+                    "Coins",
+                    "Coins.Width()*3",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Coins",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "PickupCoin",
+                    "",
+                    "80",
+                    "RandomFloatInRange(1,1.1)"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -784,7 +922,12 @@
         "textG": 0,
         "textR": 0
       },
-      "comment": "switch to new while current_level changed"
+      "comment": "stat anew while server_map changed"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -830,11 +973,6 @@
           "actions": []
         }
       ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     }
   ],
   "layers": [
