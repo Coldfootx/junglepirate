@@ -287,19 +287,16 @@
   "variables": [
     {
       "name": "server_map",
-      "persistentUuid": "9c857b89-beac-4ebd-8ae7-a488edd951d3",
       "type": "number",
       "value": 1
     },
     {
       "name": "server_max_players",
-      "persistentUuid": "2a4d1878-1acf-4f4a-9873-ad7c25e0a6d8",
       "type": "number",
-      "value": 70
+      "value": 72
     },
     {
       "name": "game_name",
-      "persistentUuid": "08645b01-5535-4830-b926-0b6f45b953a6",
       "type": "string",
       "value": "\"Jungle Pirate\""
     }
