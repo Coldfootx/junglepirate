@@ -6,7 +6,7 @@
   "r": 255,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
-  "title": "testing",
+  "title": "Game in progress",
   "v": 255,
   "uiSettings": {
     "grid": false,
@@ -18,13 +18,29 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4194339782759094,
+    "zoomFactor": 0.3673257545058851,
     "windowMask": false
   },
   "objectsGroups": [
     {
-      "name": "Players",
+      "name": "team_shaman",
       "objects": []
+    },
+    {
+      "name": "team_necromancer",
+      "objects": [
+        {
+          "name": "Necromancer"
+        }
+      ]
+    },
+    {
+      "name": "players",
+      "objects": [
+        {
+          "name": "Necromancer"
+        }
+      ]
     }
   ],
   "variables": [
@@ -37,27 +53,14 @@
       "name": "player_id",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "players",
+      "type": "structure",
+      "children": []
     }
   ],
   "instances": [
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "locked": true,
-      "name": "Platformer_Character",
-      "persistentUuid": "3b963875-17a7-4549-b547-1ffd9690af81",
-      "sealed": true,
-      "width": 0,
-      "x": 277,
-      "y": 270,
-      "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
     {
       "angle": 0,
       "customSize": true,
@@ -81,12 +84,35 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "Shaman",
-      "persistentUuid": "f1676433-8123-49d0-9fdf-f4bbff4294f9",
+      "name": "Necromancer",
+      "persistentUuid": "7500ab0a-98fb-4369-9b88-f513577dc6ff",
       "width": 0,
-      "x": 426,
-      "y": 263,
-      "zOrder": 2,
+      "x": 308,
+      "y": -481,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Platform_Ground",
+      "persistentUuid": "8b7165e2-4a9c-493e-a693-ca69f09d8354",
+      "width": 384,
+      "x": 105,
+      "y": -348,
+      "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -97,159 +123,18 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "Necromancer",
-      "persistentUuid": "7500ab0a-98fb-4369-9b88-f513577dc6ff",
+      "name": "Shaman",
+      "persistentUuid": "5df3ea85-45a5-426e-971b-f1e316ef8cf6",
       "width": 0,
-      "x": 656,
-      "y": 241,
-      "zOrder": 3,
+      "x": 154,
+      "y": -500,
+      "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
     }
   ],
   "objects": [
-    {
-      "adaptCollisionMaskAutomatically": false,
-      "assetStoreId": "",
-      "name": "Platformer_Character",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "PlatformerMultitouchMapper",
-          "type": "SpriteMultitouchJoystick::PlatformerMultitouchMapper",
-          "Property": "PlatformerObject",
-          "ControllerIdentifier": 1,
-          "JoystickIdentifier": "Primary",
-          "JumpButton": "A"
-        },
-        {
-          "name": "PlatformerObject",
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
-          "acceleration": 1000,
-          "canGoDownFromJumpthru": true,
-          "canGrabPlatforms": false,
-          "canGrabWithoutMoving": false,
-          "deceleration": 1500,
-          "gravity": 1050,
-          "ignoreDefaultControls": false,
-          "jumpSpeed": 717,
-          "jumpSustainTime": 0.3,
-          "ladderClimbingSpeed": 200,
-          "maxFallingSpeed": 800,
-          "maxSpeed": 400,
-          "slopeMaxAngle": 60,
-          "useLegacyTrajectory": false,
-          "xGrabTolerance": 10,
-          "yGrabOffset": 0
-        },
-        {
-          "name": "SmoothCamera",
-          "type": "SmoothCamera::SmoothCamera",
-          "LeftwardSpeed": 0.9,
-          "RightwardSpeed": 0.9,
-          "UpwardSpeed": 0.95,
-          "DownwardSpeed": 0.95,
-          "FollowOnX": true,
-          "FollowOnY": true,
-          "FollowFreeAreaLeft": 0,
-          "FollowFreeAreaRight": 0,
-          "FollowFreeAreaTop": 0,
-          "FollowFreeAreaBottom": 0,
-          "CameraOffsetX": 0,
-          "CameraOffsetY": 0,
-          "CameraDelay": 0,
-          "ForecastTime": 0,
-          "ForecastHistoryDuration": 0,
-          "LogLeftwardSpeed": 2.0247e-320,
-          "LogRightwardSpeed": 2.0247e-320,
-          "LogDownwardSpeed": 2.0247e-320,
-          "LogUpwardSpeed": 2.0247e-320,
-          "DelayedCenterX": 2.0247e-320,
-          "DelayedCenterY": 2.0247e-320,
-          "ForecastHistoryMeanX": 2.0247e-320,
-          "ForecastHistoryMeanY": 2.0247e-320,
-          "ForecastHistoryVarianceX": 2.0247e-320,
-          "ForecastHistoryCovariance": 2.0247e-320,
-          "ForecastHistoryLinearA": 2.0247e-320,
-          "ForecastHistoryLinearB": 2.0247e-320,
-          "ForecastedX": 2.0247e-320,
-          "ForecastedY": 2.0247e-320,
-          "ProjectedNewestX": 2.0247e-320,
-          "ProjectedNewestY": 2.0247e-320,
-          "ProjectedOldestX": 2.0247e-320,
-          "ProjectedOldestY": 2.0247e-320,
-          "ForecastHistoryVarianceY": 2.0247e-320,
-          "Index": 2.0247e-320,
-          "CameraDelayCatchUpSpeed": 0,
-          "CameraExtraDelay": 2.0247e-320,
-          "WaitingSpeedXMax": 2.0247e-320,
-          "WaitingSpeedYMax": 2.0247e-320,
-          "WaitingEnd": 2.0247e-320,
-          "CameraDelayCatchUpDuration": 2.0247e-320,
-          "LeftwardSpeedMax": 9000,
-          "RightwardSpeedMax": 9000,
-          "UpwardSpeedMax": 9000,
-          "DownwardSpeedMax": 9000,
-          "OldX": 9000.000000007454,
-          "OldY": 9000.000000007454,
-          "IsCalledManually": false
-        }
-      ],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\StartingPlayer.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 2
-                      },
-                      {
-                        "x": 64,
-                        "y": 2
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
@@ -356,145 +241,6 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "Shaman",
-      "preScale": 4.8,
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [
-        {
-          "name": "id",
-          "type": "number",
-          "value": 1
-        }
-      ],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": true,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\Old Shaman_Idle_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 4,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 24
-                      },
-                      {
-                        "x": 4,
-                        "y": 24
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\Old Shaman_Idle_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 4,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 24
-                      },
-                      {
-                        "x": 4,
-                        "y": 24
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\Old Shaman_Idle_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 4,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 24
-                      },
-                      {
-                        "x": 4,
-                        "y": 24
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
       "name": "Necromancer",
       "preScale": 4,
       "type": "Sprite",
@@ -507,7 +253,42 @@
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "PixelPerfectPlatformerCharacter",
+          "type": "PixelPerfectMovement::PixelPerfectPlatformerCharacter",
+          "PlatformerCharacter": "PlatformerObject",
+          "PixelSize": 1,
+          "OffsetX": 0,
+          "OffsetY": 0,
+          "TargetX": 0,
+          "TargetDirectionX": 0,
+          "TargetY": 0,
+          "TargetDirectionY": 0,
+          "PreviousSpeedX": 2.0247e-320,
+          "IsDecelerating": false
+        },
+        {
+          "acceleration": 1500,
+          "canGoDownFromJumpthru": true,
+          "canGrabPlatforms": false,
+          "canGrabWithoutMoving": true,
+          "deceleration": 1500,
+          "gravity": 1000,
+          "ignoreDefaultControls": true,
+          "jumpSpeed": 600,
+          "jumpSustainTime": 0.2,
+          "ladderClimbingSpeed": 150,
+          "maxFallingSpeed": 700,
+          "maxSpeed": 250,
+          "name": "PlatformerObject",
+          "slopeMaxAngle": 60,
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "useLegacyTrajectory": false,
+          "xGrabTolerance": 10,
+          "yGrabOffset": 0
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -742,17 +523,6 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "Unnamed",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": []
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
       "name": "spawn_shaman",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -897,14 +667,299 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "shaman_spawn",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\crosshair.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 2,
+                        "y": 21
+                      },
+                      {
+                        "x": 70,
+                        "y": 21
+                      },
+                      {
+                        "x": 70,
+                        "y": 52
+                      },
+                      {
+                        "x": 2,
+                        "y": 52
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "necromancer_spawn",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\crosshair.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 2,
+                        "y": 21
+                      },
+                      {
+                        "x": 70,
+                        "y": 21
+                      },
+                      {
+                        "x": 70,
+                        "y": 52
+                      },
+                      {
+                        "x": 2,
+                        "y": 52
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Shaman",
+      "preScale": 4.8,
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "PixelPerfectPlatformerCharacter",
+          "type": "PixelPerfectMovement::PixelPerfectPlatformerCharacter",
+          "PlatformerCharacter": "PlatformerObject",
+          "PixelSize": 1,
+          "OffsetX": 0,
+          "OffsetY": 0,
+          "TargetX": 0,
+          "TargetDirectionX": 0,
+          "TargetY": 0,
+          "TargetDirectionY": 0,
+          "PreviousSpeedX": 2.0247e-320,
+          "IsDecelerating": false
+        },
+        {
+          "acceleration": 1500,
+          "canGoDownFromJumpthru": true,
+          "canGrabPlatforms": true,
+          "canGrabWithoutMoving": true,
+          "deceleration": 1500,
+          "gravity": 1000,
+          "ignoreDefaultControls": true,
+          "jumpSpeed": 600,
+          "jumpSustainTime": 0.2,
+          "ladderClimbingSpeed": 150,
+          "maxFallingSpeed": 700,
+          "maxSpeed": 250,
+          "name": "PlatformerObject",
+          "slopeMaxAngle": 60,
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "useLegacyTrajectory": false,
+          "xGrabTolerance": 10,
+          "yGrabOffset": 0
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Old Shaman_Idle_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 24
+                      },
+                      {
+                        "x": 4,
+                        "y": 24
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Old Shaman_Idle_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 24
+                      },
+                      {
+                        "x": 4,
+                        "y": 24
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Old Shaman_Idle_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 24
+                      },
+                      {
+                        "x": 4,
+                        "y": 24
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
-      {
-        "objectName": "Platformer_Character"
-      },
       {
         "objectName": "Platform_Ground"
       },
@@ -921,13 +976,16 @@
         "objectName": "FallTreesBackground"
       },
       {
-        "objectName": "Shaman"
-      },
-      {
         "objectName": "Necromancer"
       },
       {
-        "objectName": "Unnamed"
+        "objectName": "Shaman"
+      },
+      {
+        "objectName": "shaman_spawn"
+      },
+      {
+        "objectName": "necromancer_spawn"
       }
     ]
   },
@@ -940,7 +998,7 @@
             "value": "CollisionNP"
           },
           "parameters": [
-            "Platformer_Character",
+            "players",
             "Coins",
             "",
             "",
@@ -1031,9 +1089,9 @@
                     "value": "Distance"
                   },
                   "parameters": [
-                    "Players",
+                    "players",
                     "Coins",
-                    "Coins.Width()*3",
+                    "Coins.Width()*2",
                     ""
                   ]
                 }
@@ -1046,18 +1104,6 @@
                   "parameters": [
                     "Coins",
                     ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "PickupCoin",
-                    "",
-                    "80",
-                    "RandomFloatInRange(1,1.1)"
                   ]
                 }
               ]
@@ -1116,6 +1162,18 @@
             "",
             "0.5",
             "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Shaman",
+            "shaman_spawn.X()",
+            "shaman_spawn.Y()",
             ""
           ]
         }
@@ -1202,12 +1260,12 @@
       "type": "OpacityCapability::OpacityBehavior"
     },
     {
-      "name": "Platform",
-      "type": "PlatformBehavior::PlatformBehavior"
+      "name": "PixelPerfectPlatformerCharacter",
+      "type": "PixelPerfectMovement::PixelPerfectPlatformerCharacter"
     },
     {
-      "name": "PlatformerMultitouchMapper",
-      "type": "SpriteMultitouchJoystick::PlatformerMultitouchMapper"
+      "name": "Platform",
+      "type": "PlatformBehavior::PlatformBehavior"
     },
     {
       "name": "PlatformerObject",
@@ -1220,10 +1278,6 @@
     {
       "name": "Scale",
       "type": "ScalableCapability::ScalableBehavior"
-    },
-    {
-      "name": "SmoothCamera",
-      "type": "SmoothCamera::SmoothCamera"
     }
   ]
 }

@@ -6,7 +6,7 @@
   "r": 209,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
-  "title": "Jungle Pirate Main Menu",
+  "title": "Main Menu",
   "v": 209,
   "uiSettings": {
     "grid": false,
@@ -33,6 +33,7 @@
       "locked": true,
       "name": "logo",
       "persistentUuid": "b88de81b-6ba4-4d4a-8a6c-b6e2e0b426ad",
+      "sealed": true,
       "width": 0,
       "x": 243,
       "y": 43,
@@ -47,8 +48,10 @@
       "height": 0,
       "keepRatio": true,
       "layer": "Background",
+      "locked": true,
       "name": "NewSprite",
       "persistentUuid": "023d93e4-df3b-4aea-b2da-bc27a7ffa1da",
+      "sealed": true,
       "width": 0,
       "x": 0,
       "y": 0,
@@ -210,6 +213,29 @@
         }
       ],
       "actions": [
+        {
+          "type": {
+            "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+          },
+          "parameters": [
+            "",
+            "\"Join Game\"",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "ZoomCamera"
+          },
+          "parameters": [
+            "",
+            "1",
+            "",
+            ""
+          ]
+        },
         {
           "type": {
             "value": "Tween::TweenBehavior::AddObjectColorTween2"
