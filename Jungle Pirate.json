@@ -264,6 +264,17 @@
         "name": "assets\\crosshair.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/CantoraOne-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
+          "name": "gdevelop-asset-store"
+        }
       }
     ],
     "resourceFolders": []
@@ -276,16 +287,19 @@
   "variables": [
     {
       "name": "server_map",
+      "persistentUuid": "9c857b89-beac-4ebd-8ae7-a488edd951d3",
       "type": "number",
       "value": 1
     },
     {
       "name": "server_max_players",
+      "persistentUuid": "2a4d1878-1acf-4f4a-9873-ad7c25e0a6d8",
       "type": "number",
       "value": 70
     },
     {
       "name": "game_name",
+      "persistentUuid": "08645b01-5535-4830-b926-0b6f45b953a6",
       "type": "string",
       "value": "\"Jungle Pirate\""
     }
@@ -329,6 +343,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/spritemultitouchjoystick"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/repeateveryxseconds"
     }
   ],
   "externalLayouts": [
