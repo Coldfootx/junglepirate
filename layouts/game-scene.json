@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.2725359896772953,
+    "zoomFactor": 0.25504554733543616,
     "windowMask": false
   },
   "objectsGroups": [
@@ -1202,7 +1202,7 @@
               "parameters": [
                 "",
                 "Shaman",
-                "shaman_spawn.X()",
+                "shaman_spawn.X()+600",
                 "shaman_spawn.Y()",
                 ""
               ]
@@ -1271,6 +1271,69 @@
             "Text",
             "=",
             "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "players",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberObjectVariable"
+          },
+          "parameters": [
+            "players",
+            "id",
+            "=",
+            "player_id"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCameraCenterX"
+          },
+          "parameters": [
+            "Camera.X()",
+            "=",
+            "players.X()",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetCameraCenterY"
+          },
+          "parameters": [
+            "",
+            "=",
+            "players.Y()",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "ClampCamera"
+          },
+          "parameters": [
+            "",
+            "0",
+            "0",
+            "1000",
+            "1000",
+            "",
+            ""
           ]
         }
       ]
