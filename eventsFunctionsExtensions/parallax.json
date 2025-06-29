@@ -116,18 +116,12 @@
           "value": "0.5",
           "type": "Number",
           "label": "Parallax factor (speed for the parallax, usually between 0 and 1)",
-          "description": "",
-          "group": "",
-          "extraInformation": [],
           "name": "ParallaxFactor"
         },
         {
           "value": "",
           "type": "String",
           "label": "Layer to be followed (leave empty for the base layer)",
-          "description": "",
-          "group": "",
-          "extraInformation": [],
           "name": "FollowedLayer"
         }
       ],
@@ -217,18 +211,12 @@
           "value": "0.5",
           "type": "Number",
           "label": "Parallax factor (speed for the parallax, usually between 0 and 1)",
-          "description": "",
-          "group": "",
-          "extraInformation": [],
           "name": "ParallaxFactor"
         },
         {
           "value": "",
           "type": "String",
           "label": "Layer to be followed (leave empty for the base layer)",
-          "description": "",
-          "group": "",
-          "extraInformation": [],
           "name": "FollowedLayer"
         },
         {
@@ -236,9 +224,6 @@
           "type": "Number",
           "unit": "Pixel",
           "label": "Offset on Y axis",
-          "description": "",
-          "group": "",
-          "extraInformation": [],
           "name": "OffsetY"
         }
       ],

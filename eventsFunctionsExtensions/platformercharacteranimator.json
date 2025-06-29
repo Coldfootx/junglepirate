@@ -1267,71 +1267,53 @@
           "value": "true",
           "type": "Boolean",
           "label": "Enable animation changes",
-          "description": "",
-          "group": "",
-          "extraInformation": [],
           "name": "EnableAnimationChanges"
         },
         {
           "value": "true",
           "type": "Boolean",
           "label": "Enable horizontal flipping",
-          "description": "",
-          "group": "",
-          "extraInformation": [],
           "name": "EnableHorizontalFlipping"
         },
         {
           "value": "Idle",
           "type": "String",
           "label": "\"Idle\" animation name ",
-          "description": "",
           "group": "Animation names",
-          "extraInformation": [],
           "name": "IdleAnimationName"
         },
         {
           "value": "Run",
           "type": "String",
           "label": "\"Run\" animation name",
-          "description": "",
           "group": "Animation names",
-          "extraInformation": [],
           "name": "RunAnimationName"
         },
         {
           "value": "Jump",
           "type": "String",
           "label": "\"Jump\" animation name",
-          "description": "",
           "group": "Animation names",
-          "extraInformation": [],
           "name": "JumpAnimationName"
         },
         {
           "value": "Fall",
           "type": "String",
           "label": "\"Fall\" animation name",
-          "description": "",
           "group": "Animation names",
-          "extraInformation": [],
           "name": "FallAnimationName"
         },
         {
           "value": "Climb",
           "type": "String",
           "label": "\"Climb\" animation name",
-          "description": "",
           "group": "Animation names",
-          "extraInformation": [],
           "name": "ClimbAnimationName"
         },
         {
           "value": "",
           "type": "Behavior",
           "label": "Platformer character",
-          "description": "",
-          "group": "",
           "extraInformation": [
             "PlatformBehavior::PlatformerObjectBehavior"
           ],
@@ -1341,8 +1323,6 @@
           "value": "",
           "type": "Behavior",
           "label": "Animatable capacity",
-          "description": "",
-          "group": "",
           "extraInformation": [
             "AnimatableCapability::AnimatableBehavior"
           ],
@@ -1352,8 +1332,6 @@
           "value": "",
           "type": "Behavior",
           "label": "Flippable capacity",
-          "description": "",
-          "group": "",
           "extraInformation": [
             "FlippableCapability::FlippableBehavior"
           ],
