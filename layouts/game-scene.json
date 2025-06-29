@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.25504554733543616,
+    "zoomFactor": 0.2817259932079583,
     "windowMask": false
   },
   "objectsGroups": [
@@ -46,6 +46,14 @@
         },
         {
           "name": "Shaman"
+        }
+      ]
+    },
+    {
+      "name": "pc_name",
+      "objects": [
+        {
+          "name": "pc_name_text"
         }
       ]
     }
@@ -162,6 +170,22 @@
       "x": 17,
       "y": 680,
       "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "pc_name_text",
+      "persistentUuid": "ed195dfd-47bb-4258-9ed3-0545f8aee107",
+      "width": 0,
+      "x": 286,
+      "y": -1255,
+      "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -302,9 +326,9 @@
           "IsDecelerating": false
         },
         {
-          "canGrabPlatforms": true,
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "canGrabPlatforms": true,
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
           "canGrabWithoutMoving": true,
@@ -855,7 +879,13 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
@@ -897,6 +927,55 @@
         "characterSize": 20,
         "color": "0;0;0"
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "pc_name_text",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "name": "id",
+          "persistentUuid": "7b13ee38-e20e-48e9-a9fc-1ed80e138947",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "string": "player_id",
+      "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "player_id",
+        "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "color": "0;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -925,6 +1004,9 @@
       },
       {
         "objectName": "necromancer_spawn"
+      },
+      {
+        "objectName": "pc_name_text"
       }
     ]
   },
@@ -1174,6 +1256,12 @@
                     "=",
                     "player_id"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
                 }
               ],
               "actions": [
@@ -1184,7 +1272,7 @@
                   "parameters": [
                     "found_id",
                     "=",
-                    "found_id+1"
+                    "1"
                   ]
                 }
               ]
@@ -1202,7 +1290,7 @@
               "parameters": [
                 "",
                 "Shaman",
-                "shaman_spawn.X()+600",
+                "1400",
                 "shaman_spawn.Y()",
                 ""
               ]
@@ -1224,10 +1312,32 @@
               },
               "parameters": [
                 "",
-                "Shaman",
-                "shaman_spawn.X()",
-                "shaman_spawn.Y()+300",
+                "pc_name_text",
+                "1400",
+                "shaman_spawn.Y()",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "pc_name_text",
+                "id",
+                "=",
+                "player_id"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "pc_name_text",
+                "Text",
+                "=",
+                "ToString(player_id)"
               ]
             },
             {
@@ -1240,6 +1350,25 @@
                 "=",
                 "player_id+3"
               ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                "shaman_spawn.X()",
+                "shaman_spawn.Y()+300",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
             }
           ]
         }
@@ -1270,7 +1399,7 @@
             "debugtext",
             "Text",
             "=",
-            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))"
+            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)"
           ]
         }
       ]
@@ -1289,6 +1418,12 @@
             "=",
             "player_id"
           ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
         }
       ],
       "actions": [
@@ -1315,6 +1450,57 @@
             "",
             ""
           ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "pc_name",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "pc_name",
+                "id",
+                "=",
+                "player_id"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "pc_name",
+                "=",
+                "0",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         }
       ]
     },
