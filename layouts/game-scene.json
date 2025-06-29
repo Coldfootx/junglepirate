@@ -73,6 +73,16 @@
       "name": "found_id",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "shaman_amount",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "necromancer_amount",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
@@ -1285,86 +1295,175 @@
           "actions": [
             {
               "type": {
-                "value": "Create"
+                "value": "SetNumberVariable"
               },
               "parameters": [
-                "",
-                "Shaman",
-                "1400",
-                "shaman_spawn.Y()",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberObjectVariable"
-              },
-              "parameters": [
-                "Shaman",
-                "id",
+                "shaman_amount",
                 "=",
-                "player_id"
+                "Count(team_shaman)"
               ]
             },
             {
               "type": {
-                "value": "Create"
+                "value": "SetNumberVariable"
               },
               "parameters": [
-                "",
-                "pc_name_text",
-                "1400",
-                "shaman_spawn.Y()",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberObjectVariable"
-              },
-              "parameters": [
-                "pc_name_text",
-                "id",
+                "necromancer_amount",
                 "=",
-                "player_id"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "pc_name_text",
-                "Text",
-                "=",
-                "ToString(player_id)"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberObjectVariable"
-              },
-              "parameters": [
-                "Shaman",
-                "id",
-                "=",
-                "player_id+3"
-              ]
-            },
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "Shaman",
-                "shaman_spawn.X()",
-                "shaman_spawn.Y()+300",
-                ""
+                "Count(team_necromancer)"
               ]
             }
           ],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "shaman_amount",
+                    "<",
+                    "necromancer_amount"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Shaman",
+                    "shaman_spawn.X()+Random(shaman_spawn.Width())",
+                    "shaman_spawn.Y()+Random(shaman_spawn.Height())",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Shaman",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "pc_name_text",
+                    "Shaman.X()",
+                    "Shaman.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    "Text",
+                    "=",
+                    "ToString(player_id)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "shaman_amount",
+                    "<",
+                    "necromancer_amount"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Necromancer",
+                    "necromancer_spawn.X()+Random(necromancer_spawn.Width())",
+                    "necromancer_spawn.Y()+Random(necromancer_spawn.Height())",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Necromancer",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "pc_name_text",
+                    "Necromancer.X()",
+                    "Necromancer.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    "Text",
+                    "=",
+                    "ToString(player_id)"
+                  ]
+                }
+              ]
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
