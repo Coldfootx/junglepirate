@@ -33,6 +33,12 @@
         },
         {
           "name": "quit_button"
+        },
+        {
+          "name": "join_game_button"
+        },
+        {
+          "name": "credits_back_button"
         }
       ]
     },
@@ -62,9 +68,9 @@
   ],
   "variables": [
     {
-      "name": "credits_text",
+      "name": "credits_text_variable",
       "type": "string",
-      "value": "Team 1 Old Shaman tile and Team 2 Necromancer tile by Wishforge Games\nMain Menu blue BG Designed by Freepik"
+      "value": "aaaaz working"
     },
     {
       "name": "main_menu_position",
@@ -578,9 +584,9 @@
       "effects": [],
       "behaviors": [],
       "content": {
-        "initialValue": "credits_text",
+        "initialValue": "",
         "placeholder": "",
-        "fontResourceName": "",
+        "fontResourceName": "assets\\CantoraOne-Regular.ttf",
         "fontSize": 20,
         "inputType": "text area",
         "textColor": "0;0;0",
@@ -589,7 +595,7 @@
         "borderColor": "0;0;0",
         "borderOpacity": 255,
         "borderWidth": 7,
-        "readOnly": true,
+        "readOnly": false,
         "disabled": false,
         "paddingX": 2,
         "paddingY": 1,
@@ -1104,7 +1110,7 @@
             "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
           },
           "parameters": [
-            "credits_button",
+            "join_game_button",
             ""
           ]
         },
@@ -1138,7 +1144,7 @@
             "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
           },
           "parameters": [
-            "credits_back_button",
+            "credits_button",
             ""
           ]
         },
@@ -1203,6 +1209,40 @@
       "conditions": [
         {
           "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
+          },
+          "parameters": [
+            "credits_back_button",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "5de189bcb6bd33d94771d296ecd55fd6ecebdcc3307a129c73cfe930f048ad58_Run_01.wav",
+            "",
+            "100",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
             "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
           },
           "parameters": [
@@ -1237,6 +1277,17 @@
             "0",
             "0",
             "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "credits_area",
+            "Text",
+            "=",
+            "\"Working\""
           ]
         }
       ]

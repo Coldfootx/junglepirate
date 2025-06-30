@@ -344,6 +344,20 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/SoundEffects/Nox Footsteps/DirtyGround/Run/5de189bcb6bd33d94771d296ecd55fd6ecebdcc3307a129c73cfe930f048ad58_Run_01.wav",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "file": "assets/Roboto-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets\\Roboto-Regular.ttf",
+        "userAdded": false
+      },
+      {
+        "file": "assets/CantoraOne-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets\\CantoraOne-Regular.ttf",
+        "userAdded": false
       }
     ],
     "resourceFolders": []

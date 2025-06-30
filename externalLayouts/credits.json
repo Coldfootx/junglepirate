@@ -16,7 +16,16 @@
       "y": 195,
       "zOrder": 1,
       "numberProperties": [],
-      "stringProperties": [],
+      "stringProperties": [
+        {
+          "name": "initialValue",
+          "value": "aaazz"
+        },
+        {
+          "name": "placeholder",
+          "value": ""
+        }
+      ],
       "initialVariables": []
     },
     {
@@ -25,8 +34,10 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
+      "locked": true,
       "name": "credits_back_button",
       "persistentUuid": "c3543687-e59c-42f8-a08d-60e8d6415881",
+      "sealed": true,
       "width": 0,
       "x": 526,
       "y": 526,
