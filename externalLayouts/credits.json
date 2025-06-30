@@ -1,0 +1,52 @@
+{
+  "associatedLayout": "Main Menu",
+  "name": "Credits",
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1.006711409395973,
+      "height": 300,
+      "layer": "",
+      "locked": true,
+      "name": "credits_area",
+      "persistentUuid": "5a20e440-9fe7-4c82-a46e-f2239eec7075",
+      "width": 600,
+      "x": 400,
+      "y": 195,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "credits_back_button",
+      "persistentUuid": "c3543687-e59c-42f8-a08d-60e8d6415881",
+      "width": 0,
+      "x": 526,
+      "y": 526,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "editionSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.5,
+    "windowMask": false
+  }
+}
