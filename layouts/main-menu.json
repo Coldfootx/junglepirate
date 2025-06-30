@@ -21,7 +21,25 @@
     "zoomFactor": 0.546875,
     "windowMask": false
   },
-  "objectsGroups": [],
+  "objectsGroups": [
+    {
+      "name": "buttons",
+      "objects": [
+        {
+          "name": "host_game_button"
+        },
+        {
+          "name": "join_game_button"
+        },
+        {
+          "name": "credits_button"
+        },
+        {
+          "name": "quit_button"
+        }
+      ]
+    }
+  ],
   "variables": [],
   "instances": [
     {
@@ -33,6 +51,7 @@
       "locked": true,
       "name": "logo",
       "persistentUuid": "8fa588c0-ae8d-4a32-a80b-42d77ec4897f",
+      "sealed": true,
       "width": 0,
       "x": 243,
       "y": 0,
@@ -51,6 +70,7 @@
       "locked": true,
       "name": "menubg",
       "persistentUuid": "0899691c-42e4-4184-8a11-97b979d1b9f3",
+      "sealed": true,
       "width": 640,
       "x": 380,
       "y": 176,
@@ -65,8 +85,10 @@
       "height": 0,
       "keepRatio": true,
       "layer": "Background",
+      "locked": true,
       "name": "space_bg",
       "persistentUuid": "7c02ffad-bd7b-429e-b0ca-27d1557c3279",
+      "sealed": true,
       "width": 0,
       "x": 0,
       "y": 0,
@@ -887,6 +909,142 @@
             "\"linear\"",
             "5",
             ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
+          },
+          "parameters": [
+            "host_game_button",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "5de189bcb6bd33d94771d296ecd55fd6ecebdcc3307a129c73cfe930f048ad58_Run_01.wav",
+            "",
+            "100",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
+          },
+          "parameters": [
+            "join_game_button",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "5de189bcb6bd33d94771d296ecd55fd6ecebdcc3307a129c73cfe930f048ad58_Run_01.wav",
+            "",
+            "100",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
+          },
+          "parameters": [
+            "credits_button",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "5de189bcb6bd33d94771d296ecd55fd6ecebdcc3307a129c73cfe930f048ad58_Run_01.wav",
+            "",
+            "100",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
+          },
+          "parameters": [
+            "quit_button",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "5de189bcb6bd33d94771d296ecd55fd6ecebdcc3307a129c73cfe930f048ad58_Run_01.wav",
+            "",
+            "100",
+            "1"
           ]
         }
       ]
