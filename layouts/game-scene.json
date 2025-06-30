@@ -83,6 +83,21 @@
       "name": "necromancer_amount",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "temp_id",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "temp1",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "temp2",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
@@ -108,71 +123,6 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "",
-      "locked": true,
-      "name": "Necromancer",
-      "persistentUuid": "7500ab0a-98fb-4369-9b88-f513577dc6ff",
-      "sealed": true,
-      "width": 0,
-      "x": 400,
-      "y": -1300,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "id",
-          "type": "number",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 64,
-      "keepRatio": true,
-      "layer": "",
-      "name": "Platform_Ground",
-      "persistentUuid": "8b7165e2-4a9c-493e-a693-ca69f09d8354",
-      "width": 384,
-      "x": 138,
-      "y": -1160,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "locked": true,
-      "name": "Shaman",
-      "persistentUuid": "5df3ea85-45a5-426e-971b-f1e316ef8cf6",
-      "sealed": true,
-      "width": 0,
-      "x": 154,
-      "y": -1300,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "id",
-          "type": "number",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
       "layer": "Background",
       "name": "debugtext",
       "persistentUuid": "ab4d9782-c351-4851-84a8-1f583ccb1dab",
@@ -180,22 +130,6 @@
       "x": 17,
       "y": 680,
       "zOrder": 6,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "name": "pc_name_text",
-      "persistentUuid": "ed195dfd-47bb-4258-9ed3-0545f8aee107",
-      "width": 0,
-      "x": 286,
-      "y": -1255,
-      "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -316,7 +250,7 @@
         {
           "name": "id",
           "type": "number",
-          "value": 2
+          "value": 0
         }
       ],
       "effects": [],
@@ -718,7 +652,7 @@
         {
           "name": "id",
           "type": "number",
-          "value": 1
+          "value": 0
         }
       ],
       "effects": [],
@@ -959,7 +893,7 @@
       "string": "player_id",
       "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
       "textAlignment": "left",
-      "characterSize": 20,
+      "characterSize": 45,
       "color": {
         "b": 0,
         "g": 0,
@@ -983,7 +917,7 @@
         "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
-        "characterSize": 20,
+        "characterSize": 45,
         "color": "0;0;0"
       }
     }
@@ -1200,34 +1134,12 @@
             "",
             ""
           ]
-        },
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "found_id",
-            "=",
-            "1"
-          ]
         }
       ],
       "events": [
         {
-          "infiniteLoopWarning": true,
-          "type": "BuiltinCommonInstructions::While",
-          "whileConditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "found_id",
-                ">",
-                "0"
-              ]
-            }
-          ],
+          "type": "BuiltinCommonInstructions::Repeat",
+          "repeatExpression": "5",
           "conditions": [],
           "actions": [
             {
@@ -1237,43 +1149,27 @@
               "parameters": [
                 "found_id",
                 "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "player_id",
-                "=",
-                "Random(31337)"
+                "1"
               ]
             }
           ],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "players",
-              "conditions": [
+              "infiniteLoopWarning": true,
+              "type": "BuiltinCommonInstructions::While",
+              "whileConditions": [
                 {
                   "type": {
-                    "value": "NumberObjectVariable"
+                    "value": "NumberVariable"
                   },
                   "parameters": [
-                    "players",
-                    "id",
-                    "=",
-                    "player_id"
+                    "found_id",
+                    ">",
+                    "0"
                   ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
                 }
               ],
+              "conditions": [],
               "actions": [
                 {
                   "type": {
@@ -1282,184 +1178,70 @@
                   "parameters": [
                     "found_id",
                     "=",
-                    "1"
+                    "0"
                   ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "shaman_amount",
-                "=",
-                "Count(team_shaman)"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "necromancer_amount",
-                "=",
-                "Count(team_necromancer)"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
+                },
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "shaman_amount",
-                    "<",
-                    "necromancer_amount"
+                    "player_id",
+                    "=",
+                    "RandomInRange(1111,9999)"
                   ]
                 }
               ],
-              "actions": [
+              "events": [
                 {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Shaman",
-                    "shaman_spawn.X()+Random(shaman_spawn.Width())",
-                    "shaman_spawn.Y()+Random(shaman_spawn.Height())",
-                    ""
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "players",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "players",
+                        "id",
+                        "=",
+                        "player_id"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "found_id",
+                        "=",
+                        "1"
+                      ]
+                    }
                   ]
                 },
                 {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Shaman",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "pc_name_text",
-                    "Shaman.X()",
-                    "Shaman.Y()",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "Text",
-                    "=",
-                    "ToString(player_id)"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "shaman_amount",
-                    "<",
-                    "necromancer_amount"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Necromancer",
-                    "necromancer_spawn.X()+Random(necromancer_spawn.Width())",
-                    "necromancer_spawn.Y()+Random(necromancer_spawn.Height())",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Necromancer",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "pc_name_text",
-                    "Necromancer.X()",
-                    "Necromancer.Y()",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "Text",
-                    "=",
-                    "ToString(player_id)"
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "temp_id",
+                        "=",
+                        "player_id"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -1467,7 +1249,179 @@
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
-              "actions": []
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "shaman_amount",
+                    "=",
+                    "Count(team_shaman)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "necromancer_amount",
+                    "=",
+                    "Count(team_necromancer)"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "shaman_amount",
+                        "<",
+                        "necromancer_amount"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Shaman",
+                        "shaman_spawn.X()+Random(shaman_spawn.Width())",
+                        "shaman_spawn.Y()+Random(shaman_spawn.Height())",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Shaman",
+                        "id",
+                        "=",
+                        "temp_id"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "pc_name_text",
+                        "Shaman.X()",
+                        "Shaman.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "pc_name_text",
+                        "id",
+                        "=",
+                        "temp_id"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "pc_name_text",
+                        "Text",
+                        "=",
+                        "ToString(temp_id)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "shaman_amount",
+                        "<",
+                        "necromancer_amount"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Necromancer",
+                        "necromancer_spawn.X()+Random(necromancer_spawn.Width())",
+                        "necromancer_spawn.Y()+Random(necromancer_spawn.Height())",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Necromancer",
+                        "id",
+                        "=",
+                        "temp_id"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "pc_name_text",
+                        "Necromancer.X()",
+                        "Necromancer.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "pc_name_text",
+                        "id",
+                        "=",
+                        "temp_id"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "pc_name_text",
+                        "Text",
+                        "=",
+                        "ToString(temp_id)"
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -1498,7 +1452,23 @@
             "debugtext",
             "Text",
             "=",
-            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)"
+            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)+\" - 1st text id: \"+ToString(temp_id)+\" - team_shaman_c: \"+ToString(Count(team_shaman))"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "temp_id",
+            "=",
+            "0"
           ]
         }
       ]
@@ -1506,51 +1476,8 @@
     {
       "type": "BuiltinCommonInstructions::ForEach",
       "object": "players",
-      "conditions": [
-        {
-          "type": {
-            "value": "NumberObjectVariable"
-          },
-          "parameters": [
-            "players",
-            "id",
-            "=",
-            "player_id"
-          ]
-        },
-        {
-          "type": {
-            "value": "BuiltinCommonInstructions::Once"
-          },
-          "parameters": []
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "SetCameraCenterX"
-          },
-          "parameters": [
-            "Camera.X()",
-            "=",
-            "players.X()",
-            "",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetCameraCenterY"
-          },
-          "parameters": [
-            "",
-            "=",
-            "players.Y()",
-            "",
-            ""
-          ]
-        }
-      ],
+      "conditions": [],
+      "actions": [],
       "events": [
         {
           "type": "BuiltinCommonInstructions::ForEach",
@@ -1564,14 +1491,8 @@
                 "pc_name",
                 "id",
                 "=",
-                "player_id"
+                "players.id"
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
@@ -1582,24 +1503,22 @@
               "parameters": [
                 "pc_name",
                 "=",
-                "0",
+                "players.X()+players.Width()/2-pc_name.Width()/2",
                 "=",
-                "0"
+                "players.Y()-30"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "temp_id",
+                "=",
+                "temp_id+1"
               ]
             }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": []
-            }
           ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
         }
       ]
     },
