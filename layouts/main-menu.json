@@ -23,7 +23,59 @@
   },
   "objectsGroups": [],
   "variables": [],
-  "instances": [],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "locked": true,
+      "name": "logo",
+      "persistentUuid": "8fa588c0-ae8d-4a32-a80b-42d77ec4897f",
+      "width": 0,
+      "x": 243,
+      "y": 0,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 544,
+      "keepRatio": true,
+      "layer": "Background",
+      "locked": true,
+      "name": "menubg",
+      "persistentUuid": "0899691c-42e4-4184-8a11-97b979d1b9f3",
+      "width": 640,
+      "x": 380,
+      "y": 176,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "Background",
+      "name": "space_bg",
+      "persistentUuid": "7c02ffad-bd7b-429e-b0ca-27d1557c3279",
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
   "objects": [
     {
       "adaptCollisionMaskAutomatically": true,
@@ -209,6 +261,346 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "3699f3a9dbcacb430dfb90834c239c60a0324b631635c6658396cd524c7adb0a",
+      "name": "host_game_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2
+      },
+      "childrenContent": {
+        "Hovered": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Hovered.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        },
+        "Idle": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Idle.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        },
+        "Label": {
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "string": "Host Game",
+          "font": "Roboto-Regular.ttf",
+          "textAlignment": "center",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Host Game",
+            "font": "Roboto-Regular.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        "Pressed": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Pressed.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        }
+      }
+    },
+    {
+      "assetStoreId": "3699f3a9dbcacb430dfb90834c239c60a0324b631635c6658396cd524c7adb0a",
+      "name": "join_game_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2
+      },
+      "childrenContent": {
+        "Hovered": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Hovered.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        },
+        "Idle": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Idle.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        },
+        "Label": {
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "string": "Join Game",
+          "font": "Roboto-Regular.ttf",
+          "textAlignment": "center",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Join Game",
+            "font": "Roboto-Regular.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        "Pressed": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Pressed.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        }
+      }
+    },
+    {
+      "assetStoreId": "3699f3a9dbcacb430dfb90834c239c60a0324b631635c6658396cd524c7adb0a",
+      "name": "credits_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2
+      },
+      "childrenContent": {
+        "Hovered": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Hovered.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        },
+        "Idle": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Idle.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        },
+        "Label": {
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "string": "Credits",
+          "font": "Roboto-Regular.ttf",
+          "textAlignment": "center",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Credits",
+            "font": "Roboto-Regular.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        "Pressed": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Pressed.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        }
+      }
+    },
+    {
+      "assetStoreId": "3699f3a9dbcacb430dfb90834c239c60a0324b631635c6658396cd524c7adb0a",
+      "name": "quit_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2
+      },
+      "childrenContent": {
+        "Hovered": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Hovered.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        },
+        "Idle": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Idle.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        },
+        "Label": {
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "string": "Quit",
+          "font": "Roboto-Regular.ttf",
+          "textAlignment": "center",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Quit",
+            "font": "Roboto-Regular.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        "Pressed": {
+          "bottomMargin": 0,
+          "height": 102,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Purple Button With Stone Frame_Pressed.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 348
+        }
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -222,6 +614,18 @@
       },
       {
         "objectName": "logo"
+      },
+      {
+        "objectName": "host_game_button"
+      },
+      {
+        "objectName": "join_game_button"
+      },
+      {
+        "objectName": "credits_button"
+      },
+      {
+        "objectName": "quit_button"
       }
     ]
   },
@@ -241,18 +645,6 @@
       "actions": [
         {
           "type": {
-            "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
-          },
-          "parameters": [
-            "",
-            "\"Join Game\"",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "type": {
             "value": "ZoomCamera"
           },
           "parameters": [
@@ -260,6 +652,18 @@
             "1",
             "",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+          },
+          "parameters": [
+            "",
+            "\"Main Men\"",
+            "0",
+            "0",
+            "0"
           ]
         },
         {
@@ -274,7 +678,7 @@
             "\"linear\"",
             "5",
             "",
-            ""
+            "no"
           ]
         },
         {
@@ -288,7 +692,7 @@
             "logo.Width()*0.75",
             "\"linear\"",
             "5",
-            ""
+            "no"
           ]
         },
         {
@@ -302,7 +706,7 @@
             "logo.X()*1.5",
             "\"linear\"",
             "5",
-            "5"
+            ""
           ]
         }
       ]
@@ -364,7 +768,7 @@
             "\"linear\"",
             "5",
             "",
-            ""
+            "no"
           ]
         },
         {
@@ -378,7 +782,7 @@
             "logo.Width()/0.75",
             "\"linear\"",
             "5",
-            ""
+            "no"
           ]
         },
         {
@@ -392,7 +796,7 @@
             "logo.X()/1.5",
             "\"linear\"",
             "5",
-            "5"
+            ""
           ]
         }
       ]
@@ -439,7 +843,7 @@
           "parameters": [
             "logo",
             "Tween",
-            "\"logo_position2\""
+            "\"logo_position1\""
           ]
         },
         {
@@ -454,7 +858,7 @@
             "\"linear\"",
             "5",
             "",
-            ""
+            "no"
           ]
         },
         {
@@ -468,7 +872,7 @@
             "logo.Width()*0.75",
             "\"linear\"",
             "5",
-            ""
+            "no"
           ]
         },
         {
@@ -482,7 +886,31 @@
             "logo.X()*1.5",
             "\"linear\"",
             "5",
-            "5"
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+          },
+          "parameters": [
+            "quit_button",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Quit"
+          },
+          "parameters": [
+            ""
           ]
         }
       ]
