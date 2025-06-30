@@ -98,6 +98,11 @@
       "name": "temp2",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "text_buffer",
+      "type": "string",
+      "value": " "
     }
   ],
   "instances": [
@@ -883,7 +888,6 @@
       "variables": [
         {
           "name": "id",
-          "persistentUuid": "7b13ee38-e20e-48e9-a9fc-1ed80e138947",
           "type": "number",
           "value": 0
         }
@@ -1100,6 +1104,7 @@
       "actions": []
     },
     {
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -1207,12 +1212,6 @@
                         "=",
                         "player_id"
                       ]
-                    },
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::Once"
-                      },
-                      "parameters": []
                     }
                   ],
                   "actions": [
@@ -1227,22 +1226,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "temp_id",
-                        "=",
-                        "player_id"
-                      ]
-                    }
-                  ]
                 }
               ]
             },
@@ -1250,6 +1233,16 @@
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "temp_id",
+                    "=",
+                    "player_id"
+                  ]
+                },
                 {
                   "type": {
                     "value": "SetNumberVariable"
@@ -1270,155 +1263,153 @@
                     "Count(team_necromancer)"
                   ]
                 }
-              ],
-              "events": [
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "shaman_amount",
-                        "<",
-                        "necromancer_amount"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "Shaman",
-                        "shaman_spawn.X()+Random(shaman_spawn.Width())",
-                        "shaman_spawn.Y()+Random(shaman_spawn.Height())",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "Shaman",
-                        "id",
-                        "=",
-                        "temp_id"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "pc_name_text",
-                        "Shaman.X()",
-                        "Shaman.Y()",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "pc_name_text",
-                        "id",
-                        "=",
-                        "temp_id"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                      },
-                      "parameters": [
-                        "pc_name_text",
-                        "Text",
-                        "=",
-                        "ToString(temp_id)"
-                      ]
-                    }
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "shaman_amount",
+                    "<",
+                    "necromancer_amount"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Shaman",
+                    "shaman_spawn.X()+Random(shaman_spawn.Width()-Shaman.Width())",
+                    "shaman_spawn.Y()+Random(shaman_spawn.Height()-Shaman.Height())",
+                    ""
                   ]
                 },
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": true,
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "shaman_amount",
-                        "<",
-                        "necromancer_amount"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "Necromancer",
-                        "necromancer_spawn.X()+Random(necromancer_spawn.Width())",
-                        "necromancer_spawn.Y()+Random(necromancer_spawn.Height())",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "Necromancer",
-                        "id",
-                        "=",
-                        "temp_id"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "pc_name_text",
-                        "Necromancer.X()",
-                        "Necromancer.Y()",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "pc_name_text",
-                        "id",
-                        "=",
-                        "temp_id"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                      },
-                      "parameters": [
-                        "pc_name_text",
-                        "Text",
-                        "=",
-                        "ToString(temp_id)"
-                      ]
-                    }
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Shaman",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "pc_name_text",
+                    "Shaman.X()",
+                    "Shaman.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    "Text",
+                    "=",
+                    "ToString(temp_id)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "shaman_amount",
+                    "<",
+                    "necromancer_amount"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Necromancer",
+                    "necromancer_spawn.X()+Random(necromancer_spawn.Width()-Necromancer.Width())",
+                    "necromancer_spawn.Y()+Random(necromancer_spawn.Height()-Necromancer.Height())",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Necromancer",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "pc_name_text",
+                    "Necromancer.X()",
+                    "Necromancer.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    "Text",
+                    "=",
+                    "ToString(temp_id)"
                   ]
                 }
               ]
@@ -1426,6 +1417,38 @@
           ]
         }
       ]
+    },
+    {
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::JsCode",
+      "inlineCode": [
+        "const pc_name_texts = runtimeScene.getObjects(\"pc_name_text\");",
+        "const shamans = runtimeScene.getObjects(\"Shaman\");",
+        "const necromancers = runtimeScene.getObjects(\"Necromancer\");",
+        "",
+        "pc_name_texts.forEach(pc_name_textz => {",
+        "    necromancers.forEach(necromancerz => {",
+        "        if (pc_name_textz.id == necromancerz.id) {",
+        "            pc_name_textz.setX(necromancerz.getX()+necromancerz.getWidth()/2-pc_name_textz.getWidth()/2);",
+        "            pc_name_textz.setY(necromancerz.getY()-pc_name_textz.getHeight());",
+        "            runtimeScene.getGame().getVariables().get('text_buffer').setString(runtimeScene.getGame().getVariables().get('text_buffer').getAsString()+ \", \" + toString(necromancerz.id));",
+        "        };",
+        "    });",
+        "});",
+        "",
+        "pc_name_texts.forEach(pc_name_textz => {",
+        "    shamans.forEach(shamanz => {",
+        "        if (pc_name_textz.id == shamanz.id) {",
+        "            pc_name_textz.setX(shamanz.getX()+shamanz.getWidth()/2-pc_name_textz.getWidth()/2);",
+        "            pc_name_textz.setY(shamanz.getY()-pc_name_textz.getHeight());",
+        "            runtimeScene.getGame().getVariables().get('text_buffer').setString(runtimeScene.getGame().getVariables().get('text_buffer').getAsString()+ \", \" + toString(shamanz.id));",
+        "        };",
+        "    });",
+        "});"
+      ],
+      "parameterObjects": "",
+      "useStrict": true,
+      "eventsSheetExpanded": false
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -1452,7 +1475,7 @@
             "debugtext",
             "Text",
             "=",
-            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)+\" - 1st text id: \"+ToString(temp_id)+\" - team_shaman_c: \"+ToString(Count(team_shaman))"
+            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)+\" - 1st text id: \"+ToString(temp_id)+\" - team_shaman_c: \"+ToString(Count(team_shaman))+ \" \"+ text_buffer"
           ]
         }
       ]
@@ -1505,17 +1528,7 @@
                 "=",
                 "players.X()+players.Width()/2-pc_name.Width()/2",
                 "=",
-                "players.Y()-30"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "temp_id",
-                "=",
-                "temp_id+1"
+                "players.Y()-pc_name.Height()"
               ]
             }
           ]

@@ -23,59 +23,17 @@
   },
   "objectsGroups": [],
   "variables": [],
-  "instances": [
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "locked": true,
-      "name": "logo",
-      "persistentUuid": "b88de81b-6ba4-4d4a-8a6c-b6e2e0b426ad",
-      "sealed": true,
-      "width": 0,
-      "x": 243,
-      "y": 43,
-      "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "Background",
-      "locked": true,
-      "name": "NewSprite",
-      "persistentUuid": "023d93e4-df3b-4aea-b2da-bc27a7ffa1da",
-      "sealed": true,
-      "width": 0,
-      "x": 0,
-      "y": 0,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    }
-  ],
+  "instances": [],
   "objects": [
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "logo",
+      "name": "menubg",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "Tween",
-          "type": "Tween::TweenBehavior"
-        }
-      ],
+      "behaviors": [],
       "animations": [
         {
           "name": "",
@@ -87,7 +45,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\logo.png",
+                  "image": "assets\\menubg.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -103,20 +61,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 34,
-                        "y": 34
+                        "x": 0,
+                        "y": 0
                       },
                       {
-                        "x": 876,
-                        "y": 34
+                        "x": 640,
+                        "y": 0
                       },
                       {
-                        "x": 876,
-                        "y": 132
+                        "x": 640,
+                        "y": 600
                       },
                       {
-                        "x": 34,
-                        "y": 132
+                        "x": 0,
+                        "y": 600
                       }
                     ]
                   ]
@@ -130,7 +88,7 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "NewSprite",
+      "name": "space_bg",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -186,16 +144,84 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "logo",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\logo.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 914,
+                        "y": 0
+                      },
+                      {
+                        "x": 914,
+                        "y": 176
+                      },
+                      {
+                        "x": 0,
+                        "y": 176
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "logo"
+        "objectName": "menubg"
       },
       {
-        "objectName": "NewSprite"
+        "objectName": "space_bg"
+      },
+      {
+        "objectName": "logo"
       }
     ]
   },
@@ -259,7 +285,7 @@
             "logo",
             "Tween",
             "\"logo_width1\"",
-            "logo.Width()*0.70",
+            "logo.Width()*0.75",
             "\"linear\"",
             "5",
             ""
@@ -267,17 +293,16 @@
         },
         {
           "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
           },
           "parameters": [
             "logo",
             "Tween",
             "\"logo_position1\"",
             "logo.X()*1.5",
-            "logo.Y()",
             "\"linear\"",
             "5",
-            ""
+            "5"
           ]
         }
       ]
@@ -350,7 +375,7 @@
             "logo",
             "Tween",
             "\"logo_width2\"",
-            "logo.Width()*1/0.70",
+            "logo.Width()/0.75",
             "\"linear\"",
             "5",
             ""
@@ -358,17 +383,16 @@
         },
         {
           "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
           },
           "parameters": [
             "logo",
             "Tween",
             "\"logo_position2\"",
             "logo.X()/1.5",
-            "logo.Y()",
             "\"linear\"",
             "5",
-            ""
+            "5"
           ]
         }
       ]
@@ -420,21 +444,6 @@
         },
         {
           "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
-          },
-          "parameters": [
-            "logo",
-            "Tween",
-            "\"logo_position1\"",
-            "logo.X()*1.5",
-            "logo.Y()",
-            "\"linear\"",
-            "5",
-            ""
-          ]
-        },
-        {
-          "type": {
             "value": "Tween::TweenBehavior::AddObjectColorTween2"
           },
           "parameters": [
@@ -456,10 +465,24 @@
             "logo",
             "Tween",
             "\"logo_width1\"",
-            "logo.Width()*0.70",
+            "logo.Width()*0.75",
             "\"linear\"",
             "5",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+          },
+          "parameters": [
+            "logo",
+            "Tween",
+            "\"logo_position1\"",
+            "logo.X()*1.5",
+            "\"linear\"",
+            "5",
+            "5"
           ]
         }
       ]
