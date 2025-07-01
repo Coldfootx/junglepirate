@@ -2240,7 +2240,7 @@
             "value": "Wait"
           },
           "parameters": [
-            "3"
+            "2"
           ]
         },
         {
@@ -2531,7 +2531,7 @@
                 "value": "Wait"
               },
               "parameters": [
-                "3"
+                "2"
               ]
             },
             {
@@ -2557,7 +2557,7 @@
                 "value": "Wait"
               },
               "parameters": [
-                "3"
+                "2"
               ]
             },
             {
