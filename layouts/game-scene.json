@@ -1104,7 +1104,6 @@
       "actions": []
     },
     {
-      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -1238,16 +1237,6 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "temp_id",
-                    "=",
-                    "player_id"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
                     "shaman_amount",
                     "=",
                     "Count(team_shaman)"
@@ -1302,40 +1291,6 @@
                     "=",
                     "player_id"
                   ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "pc_name_text",
-                    "Shaman.X()",
-                    "Shaman.Y()",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "Text",
-                    "=",
-                    "ToString(temp_id)"
-                  ]
                 }
               ]
             },
@@ -1377,7 +1332,13 @@
                     "=",
                     "player_id"
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
                 {
                   "type": {
                     "value": "Create"
@@ -1385,8 +1346,8 @@
                   "parameters": [
                     "",
                     "pc_name_text",
-                    "Necromancer.X()",
-                    "Necromancer.Y()",
+                    "0",
+                    "0",
                     ""
                   ]
                 },
@@ -1409,7 +1370,7 @@
                     "pc_name_text",
                     "Text",
                     "=",
-                    "ToString(temp_id)"
+                    "ToString(player_id)"
                   ]
                 }
               ]
