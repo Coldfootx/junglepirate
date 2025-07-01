@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.546875,
+    "zoomFactor": 0.5653158055126306,
     "windowMask": false
   },
   "objectsGroups": [
@@ -124,6 +124,21 @@
       "name": "clipboard_variable",
       "type": "string",
       "value": "0"
+    },
+    {
+      "name": "debug",
+      "type": "boolean",
+      "value": true
+    },
+    {
+      "name": "server_port",
+      "type": "number",
+      "value": 8900
+    },
+    {
+      "name": "update_host",
+      "type": "boolean",
+      "value": false
     }
   ],
   "instances": [
@@ -1249,7 +1264,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Own Server ID",
+      "string": "localhost:8900",
       "font": "assets\\CantoraOne-Regular.ttf",
       "textAlignment": "left",
       "characterSize": 50,
@@ -1272,7 +1287,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Own Server ID",
+        "text": "localhost:8900",
         "font": "assets\\CantoraOne-Regular.ttf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
@@ -1811,6 +1826,68 @@
             "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
           },
           "parameters": [
+            "host_copy_button",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "functions::play_button_sound"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
+          },
+          "parameters": [
+            "host_final_button",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "functions::play_button_sound"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
+          },
+          "parameters": [
             "join_game_button",
             ""
           ]
@@ -2061,6 +2138,122 @@
             "0"
           ]
         }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "debug",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "P2P::UseOwnBroker"
+              },
+              "parameters": [
+                "\"localhost\"",
+                "server_port",
+                "\"/\"",
+                "\"peerjs\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "debug",
+                "False",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "P2P::UseDefaultBroker"
+              },
+              "parameters": []
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "update_host",
+                "True",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BooleanVariable"
+          },
+          "parameters": [
+            "update_host",
+            "True",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetBooleanVariable"
+          },
+          "parameters": [
+            "update_host",
+            "False",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Wait"
+          },
+          "parameters": [
+            "3"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "host_id_text",
+            "Text",
+            "=",
+            "P2P::GetID()"
+          ]
+        }
       ]
     },
     {
@@ -2090,6 +2283,38 @@
           "parameters": [
             "",
             "host_id_text.Text::Value()",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+          },
+          "parameters": [
+            "host_final_button",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "THNK_P2P::StartServer"
+          },
+          "parameters": [
+            "",
+            "\"Game Scene\"",
             ""
           ]
         }
@@ -2220,6 +2445,131 @@
             "0",
             "0",
             "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "P2P::DisconnectFromAll"
+          },
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+          },
+          "parameters": [
+            "join_final_button",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "debug",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "P2P::UseOwnBroker"
+              },
+              "parameters": [
+                "\"localhost\"",
+                "server_port",
+                "\"/\"",
+                "\"peerjs\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "debug",
+                "False",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "P2P::UseDefaultBroker"
+              },
+              "parameters": []
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "server_id",
+                "=",
+                "server_id_text.Text::Value()"
+              ]
+            },
+            {
+              "type": {
+                "value": "P2P::Connect"
+              },
+              "parameters": [
+                "VariableString(server_id)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK_P2P::ConnectToServer"
+              },
+              "parameters": [
+                "",
+                "VariableString(server_id)",
+                ""
+              ]
+            }
           ]
         }
       ]

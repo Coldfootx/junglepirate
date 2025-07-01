@@ -65,6 +65,7 @@
       "locked": true,
       "name": "join_back_button",
       "persistentUuid": "13ac192d-b617-49a9-a529-e6355883b773",
+      "sealed": true,
       "width": 250,
       "x": 750,
       "y": 618,
