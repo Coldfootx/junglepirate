@@ -80,6 +80,9 @@
         },
         {
           "name": "join_back_button"
+        },
+        {
+          "name": "server_id_text"
         }
       ]
     }
@@ -104,6 +107,11 @@
       "name": "update_credits",
       "type": "boolean",
       "value": false
+    },
+    {
+      "name": "clipboard_variable",
+      "type": "string",
+      "value": "0"
     }
   ],
   "instances": [
@@ -1781,13 +1789,23 @@
       "actions": [
         {
           "type": {
+            "value": "Clipboard::AsynchronouslyReadTextCrossPlaform"
+          },
+          "parameters": [
+            "",
+            "clipboard_variable",
+            ""
+          ]
+        },
+        {
+          "type": {
             "value": "TextContainerCapability::TextContainerBehavior::SetValue"
           },
           "parameters": [
             "server_id_text",
             "Text",
             "=",
-            ""
+            "clipboard_variable"
           ]
         }
       ]
