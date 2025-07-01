@@ -29,6 +29,7 @@
       "locked": true,
       "name": "credits_area",
       "persistentUuid": "c0ea3a0f-d9cc-4626-9dcd-a261ae767843",
+      "sealed": true,
       "width": 599,
       "x": 401,
       "y": 195,

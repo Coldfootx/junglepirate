@@ -358,6 +358,14 @@
         "metadata": "",
         "name": "assets\\CantoraOne-Regular.ttf",
         "userAdded": false
+      },
+      {
+        "file": "assets/id_bg.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\id_bg.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -427,6 +435,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/functions"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/clipboard"
     }
   ],
   "externalLayouts": [

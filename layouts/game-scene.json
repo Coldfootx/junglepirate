@@ -1436,7 +1436,7 @@
             "debugtext",
             "Text",
             "=",
-            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)+\" - 1st text id: \"+ToString(temp_id)+\" - team_shaman_c: \"+ToString(Count(team_shaman))+ \" \"+ text_buffer"
+            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)"
           ]
         }
       ]
