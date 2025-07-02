@@ -1164,8 +1164,8 @@
       "behaviors": [],
       "string": "Server ID",
       "font": "assets\\CantoraOne-Regular.ttf",
-      "textAlignment": "left",
-      "characterSize": 50,
+      "textAlignment": "center",
+      "characterSize": 30,
       "color": {
         "b": 0,
         "g": 0,
@@ -1187,9 +1187,9 @@
         "underlined": false,
         "text": "Server ID",
         "font": "assets\\CantoraOne-Regular.ttf",
-        "textAlignment": "left",
-        "verticalTextAlignment": "top",
-        "characterSize": 50,
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 30,
         "color": "0;0;0"
       }
     },
@@ -1266,8 +1266,8 @@
       "behaviors": [],
       "string": "localhost:8900",
       "font": "assets\\CantoraOne-Regular.ttf",
-      "textAlignment": "left",
-      "characterSize": 50,
+      "textAlignment": "center",
+      "characterSize": 30,
       "color": {
         "b": 0,
         "g": 0,
@@ -1289,9 +1289,9 @@
         "underlined": false,
         "text": "localhost:8900",
         "font": "assets\\CantoraOne-Regular.ttf",
-        "textAlignment": "left",
-        "verticalTextAlignment": "top",
-        "characterSize": 50,
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 30,
         "color": "0;0;0"
       }
     },
