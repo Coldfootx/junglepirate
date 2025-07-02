@@ -134,6 +134,22 @@
       "name": "player_amount",
       "type": "number",
       "value": 75
+    },
+    {
+      "name": "map",
+      "type": "structure",
+      "children": [
+        {
+          "name": "height",
+          "type": "number",
+          "value": 10000
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "value": 5000
+        }
+      ]
     }
   ],
   "instances": [
@@ -1258,56 +1274,7 @@
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetCameraCenterX"
-              },
-              "parameters": [
-                "",
-                "=",
-                "players.X()",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetCameraCenterY"
-              },
-              "parameters": [
-                "",
-                "=",
-                "players.Y()",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetCameraCenterY"
-              },
-              "parameters": [
-                "",
-                "=",
-                "players.Y()",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetCameraCenterX"
-              },
-              "parameters": [
-                "",
-                "=",
-                "players.X()",
-                "",
-                ""
-              ]
-            }
-          ]
+          "actions": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1392,8 +1359,8 @@
                 "",
                 "0",
                 "0",
-                "9999",
-                "9999",
+                "map.width",
+                "map.height",
                 "",
                 "PlayerState.id"
               ]
