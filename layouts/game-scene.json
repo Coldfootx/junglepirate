@@ -1558,54 +1558,16 @@
           ]
         }
       ],
-      "actions": [],
-      "events": [
+      "actions": [
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "",
-                "pc_name_text",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "",
-                "Shaman",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "",
-                "Necromancer",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "debugtext",
-                "Text",
-                "=",
-                "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+PlayerState.id"
-              ]
-            }
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "debugtext",
+            "Text",
+            "=",
+            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+PlayerState.id"
           ]
         }
       ]
