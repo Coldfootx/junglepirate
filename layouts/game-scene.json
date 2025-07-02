@@ -56,6 +56,10 @@
           "name": "pc_name_text"
         }
       ]
+    },
+    {
+      "name": "linked_players",
+      "objects": []
     }
   ],
   "variables": [
@@ -1720,6 +1724,17 @@
               "actions": [
                 {
                   "type": {
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "Necromancer",
+                    "players",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "Create"
                   },
                   "parameters": [
@@ -1768,6 +1783,17 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "Shaman",
+                    "players",
+                    ""
+                  ]
+                },
                 {
                   "type": {
                     "value": "Create"
