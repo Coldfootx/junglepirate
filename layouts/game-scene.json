@@ -56,10 +56,6 @@
           "name": "pc_name_text"
         }
       ]
-    },
-    {
-      "name": "linked_players",
-      "objects": []
     }
   ],
   "variables": [
@@ -1126,6 +1122,7 @@
           "eventsSheetExpanded": true
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::ForEach",
           "object": "players",
           "conditions": [],
@@ -1134,32 +1131,88 @@
             {
               "type": "BuiltinCommonInstructions::ForEach",
               "object": "pc_name",
-              "conditions": [
+              "conditions": [],
+              "actions": [],
+              "events": [
                 {
-                  "type": {
-                    "value": "NumberObjectVariable"
-                  },
-                  "parameters": [
-                    "pc_name",
-                    "id",
-                    "=",
-                    "players.id"
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "pc_name",
+                        "id",
+                        "=",
+                        "players.id"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "pc_name",
+                        "=",
+                        "players.X()+players.Width()/2-pc_name.Width()/2",
+                        "=",
+                        "players.Y()-pc_name.Height()"
+                      ]
+                    }
                   ]
                 }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "MettreXY"
-                  },
-                  "parameters": [
-                    "pc_name",
-                    "=",
-                    "players.X()+players.Width()/2-pc_name.Width()/2",
-                    "=",
-                    "players.Y()-pc_name.Height()"
-                  ]
-                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Necromancer",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "pc_name_text",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "pc_name_text",
+                "=",
+                "players.X()+players.Width()/2-pc_name.Width()/2",
+                "=",
+                "players.Y()-pc_name.Height()"
               ]
             }
           ]
@@ -1960,7 +2013,7 @@
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
-                    "Shaman",
+                    "Necromancer",
                     "id",
                     "=",
                     "player_id"
@@ -1971,10 +2024,21 @@
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
-                    "Necromancer",
+                    "Shaman",
                     "id",
                     "=",
                     "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "pc_name_text",
+                    "pc_name",
+                    ""
                   ]
                 },
                 {
@@ -1986,16 +2050,6 @@
                     "pc_name_text",
                     "0",
                     "0",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "THNK::LinkObjectToPlayer"
-                  },
-                  "parameters": [
-                    "",
-                    "pc_name_text",
                     ""
                   ]
                 },
@@ -2023,12 +2077,12 @@
                 },
                 {
                   "type": {
-                    "value": "ModVarSceneTxt"
+                    "value": "THNK::LinkObjectToPlayer"
                   },
                   "parameters": [
-                    "PlayerState[THNK::PickedPlayer()].id",
-                    "=",
-                    "player_id"
+                    "",
+                    "pc_name_text",
+                    ""
                   ]
                 }
               ]
