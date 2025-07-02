@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.2817259932079583,
+    "zoomFactor": 0.2912258866911138,
     "windowMask": false
   },
   "objectsGroups": [
@@ -113,6 +113,27 @@
       "name": "own_id",
       "type": "string",
       "value": "0"
+    },
+    {
+      "name": "PlayerState",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Own",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "player_amount",
+      "type": "number",
+      "value": 75
     }
   ],
   "instances": [
@@ -228,7 +249,7 @@
       "effects": [],
       "behaviors": [
         {
-          "canBeGrabbed": true,
+          "canBeGrabbed": false,
           "name": "Platform",
           "type": "PlatformBehavior::PlatformBehavior",
           "platformType": "NormalPlatform",
@@ -264,9 +285,40 @@
       "variables": [
         {
           "name": "id",
-          "persistentUuid": "c9019de2-02e0-4443-a949-b7b7e68b6c0b",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "PlayerState",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Own",
+              "type": "boolean",
+              "value": false
+            }
+          ]
+        },
+        {
+          "name": "Inputs",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Jump",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Left",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Right",
+              "type": "boolean",
+              "value": false
+            }
+          ]
         }
       ],
       "effects": [],
@@ -286,11 +338,9 @@
           "IsDecelerating": false
         },
         {
-          "name": "PlatformerObject",
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
-          "canGrabPlatforms": true,
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
+          "canGrabPlatforms": false,
           "canGrabWithoutMoving": true,
           "deceleration": 1500,
           "gravity": 1000,
@@ -300,8 +350,11 @@
           "ladderClimbingSpeed": 150,
           "maxFallingSpeed": 700,
           "maxSpeed": 250,
+          "name": "PlatformerObject",
           "slopeMaxAngle": 60,
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "useLegacyTrajectory": false,
+          "useRepeatedJump": false,
           "xGrabTolerance": 10,
           "yGrabOffset": 0
         },
@@ -671,9 +724,40 @@
       "variables": [
         {
           "name": "id",
-          "persistentUuid": "c9019de2-02e0-4443-a949-b7b7e68b6c0b",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "Inputs",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Jump",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Left",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Right",
+              "type": "boolean",
+              "value": false
+            }
+          ]
+        },
+        {
+          "name": "PlayerState",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Own",
+              "type": "boolean",
+              "value": false
+            }
+          ]
         }
       ],
       "effects": [],
@@ -693,11 +777,9 @@
           "IsDecelerating": false
         },
         {
-          "name": "PlatformerObject",
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
-          "canGrabPlatforms": true,
+          "canGrabPlatforms": false,
           "canGrabWithoutMoving": true,
           "deceleration": 1500,
           "gravity": 1000,
@@ -707,8 +789,11 @@
           "ladderClimbingSpeed": 150,
           "maxFallingSpeed": 700,
           "maxSpeed": 250,
+          "name": "PlatformerObject",
           "slopeMaxAngle": 60,
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "useLegacyTrajectory": false,
+          "useRepeatedJump": false,
           "xGrabTolerance": 10,
           "yGrabOffset": 0
         },
@@ -910,10 +995,20 @@
           "name": "id",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "PlayerState_Own",
+          "type": "boolean",
+          "value": false
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "SynchronizedObject",
+          "type": "THNK::SynchronizedObject"
+        }
+      ],
       "string": "player_id",
       "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
       "textAlignment": "left",
@@ -1027,16 +1122,27 @@
           "eventsSheetExpanded": true
         },
         {
-          "disabled": true,
           "type": "BuiltinCommonInstructions::ForEach",
-          "object": "pc_name",
+          "object": "players",
           "conditions": [],
           "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::ForEach",
-              "object": "players",
-              "conditions": [],
+              "object": "pc_name",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "pc_name",
+                    "id",
+                    "=",
+                    "players.id"
+                  ]
+                }
+              ],
               "actions": [
                 {
                   "type": {
@@ -1055,48 +1161,282 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::ForEach",
-          "object": "players",
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "value": "THNK::UseLinkedObjects"
+                "value": "BooleanObjectVariable"
               },
               "parameters": [
-                "RedHero",
                 "players",
-                "="
+                "PlayerState.Own",
+                "True",
+                ""
               ]
             }
           ],
-          "actions": []
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "players",
+                    "0",
+                    "400",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "players",
+                    "180",
+                    "400",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "players",
+                    "270",
+                    "800",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "value": "RepeatEveryXSeconds::RepeatTimer::Repeat2"
+                "value": "KeyPressed"
               },
               "parameters": [
-                "debugtext",
-                "RepeatTimer",
-                "\"debug_text_loop\"",
-                "1",
+                "",
+                "d"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "THNK::SendMessage"
+              },
+              "parameters": [
+                "",
+                "\"StartRightInput\"",
+                "",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "a"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "THNK::SendMessage"
+              },
+              "parameters": [
+                "",
+                "\"StartLeftInput\"",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "w"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "THNK::SendMessage"
+              },
+              "parameters": [
+                "",
+                "\"StartJump\"",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "d"
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                "value": "THNK::SendMessage"
               },
               "parameters": [
-                "debugtext",
-                "Text",
-                "=",
-                "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)"
+                "",
+                "\"EndRightInput\"",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "a"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "THNK::SendMessage"
+              },
+              "parameters": [
+                "",
+                "\"EndLeftInput\"",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "w"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "THNK::SendMessage"
+              },
+              "parameters": [
+                "",
+                "\"EndJump\"",
+                "",
+                ""
               ]
             }
           ]
@@ -1108,108 +1448,27 @@
       "conditions": [
         {
           "type": {
-            "value": "KeyPressed"
+            "value": "RepeatEveryXSeconds::RepeatTimer::Repeat2"
           },
           "parameters": [
-            "",
-            "a"
-          ]
-        },
-        {
-          "type": {
-            "value": "THNK::UseLinkedObjects"
-          },
-          "parameters": [
-            "RedHero",
-            "players",
-            "="
+            "debugtext",
+            "RepeatTimer",
+            "\"debug_text_loop\"",
+            "1",
+            ""
           ]
         }
       ],
       "actions": [
         {
           "type": {
-            "value": "AddForceAL"
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
           },
           "parameters": [
-            "players",
-            "180",
-            "400",
-            "0"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "KeyPressed"
-          },
-          "parameters": [
-            "",
-            "w"
-          ]
-        },
-        {
-          "type": {
-            "value": "THNK::UseLinkedObjects"
-          },
-          "parameters": [
-            "RedHero",
-            "players",
-            "="
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "AddForceAL"
-          },
-          "parameters": [
-            "players",
-            "270",
-            "800",
-            "0"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "KeyPressed"
-          },
-          "parameters": [
-            "",
-            "d"
-          ]
-        },
-        {
-          "type": {
-            "value": "THNK::UseLinkedObjects"
-          },
-          "parameters": [
-            "RedHero",
-            "players",
-            "="
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "AddForceAL"
-          },
-          "parameters": [
-            "players",
-            "0",
-            "400",
-            "0"
+            "debugtext",
+            "Text",
+            "=",
+            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(player_id)"
           ]
         }
       ]
@@ -1391,245 +1650,6 @@
             ""
           ]
         }
-      ],
-      "events": [
-        {
-          "disabled": true,
-          "type": "BuiltinCommonInstructions::Repeat",
-          "repeatExpression": "5",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "found_id",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "infiniteLoopWarning": true,
-              "type": "BuiltinCommonInstructions::While",
-              "whileConditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "found_id",
-                    ">",
-                    "0"
-                  ]
-                }
-              ],
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "found_id",
-                    "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "player_id",
-                    "=",
-                    "RandomInRange(1111,9999)"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::ForEach",
-                  "object": "players",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberObjectVariable"
-                      },
-                      "parameters": [
-                        "players",
-                        "id",
-                        "=",
-                        "player_id"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "found_id",
-                        "=",
-                        "1"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "shaman_amount",
-                    "=",
-                    "Count(team_shaman)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "necromancer_amount",
-                    "=",
-                    "Count(team_necromancer)"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "shaman_amount",
-                    "<",
-                    "necromancer_amount"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Shaman",
-                    "shaman_spawn.X()+Random(shaman_spawn.Width()-Shaman.Width())",
-                    "shaman_spawn.Y()+Random(shaman_spawn.Height()-Shaman.Height())",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Shaman",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "shaman_amount",
-                    "<",
-                    "necromancer_amount"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Necromancer",
-                    "necromancer_spawn.X()+Random(necromancer_spawn.Width()-Necromancer.Width())",
-                    "necromancer_spawn.Y()+Random(necromancer_spawn.Height()-Necromancer.Height())",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Necromancer",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "pc_name_text",
-                    "0",
-                    "0",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "Text",
-                    "=",
-                    "ToString(player_id)"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
       ]
     },
     {
@@ -1799,7 +1819,22 @@
               ]
             },
             {
-              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "found_id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
               "infiniteLoopWarning": true,
               "type": "BuiltinCommonInstructions::While",
               "whileConditions": [
@@ -1871,14 +1906,46 @@
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
+              "conditions": [
+                {
+                  "type": {
+                    "value": "THNK::UseLinkedObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Shaman",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "THNK::UseLinkedObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Necromancer",
+                    ""
+                  ]
+                }
+              ],
               "actions": [
                 {
                   "type": {
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
-                    "players",
+                    "Shaman",
+                    "id",
+                    "=",
+                    "player_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Necromancer",
                     "id",
                     "=",
                     "player_id"
@@ -1898,13 +1965,23 @@
                 },
                 {
                   "type": {
+                    "value": "THNK::LinkObjectToPlayer"
+                  },
+                  "parameters": [
+                    "",
+                    "pc_name_text",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
-                    "pc_name",
+                    "pc_name_text",
                     "Text",
                     "=",
-                    "ToString(player_id)"
+                    "player_id"
                   ]
                 },
                 {
@@ -1912,7 +1989,7 @@
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
-                    "pc_name",
+                    "pc_name_text",
                     "id",
                     "=",
                     "player_id"
@@ -1923,7 +2000,7 @@
                     "value": "ModVarSceneTxt"
                   },
                   "parameters": [
-                    "PlayerState[THNK::PickedPlayer()].ID",
+                    "PlayerState[THNK::PickedPlayer()].id",
                     "=",
                     "player_id"
                   ]
@@ -1950,7 +2027,27 @@
               },
               "parameters": [
                 "",
-                "players",
+                "pc_name_text",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Necromancer",
                 ""
               ]
             }
@@ -1961,98 +2058,31 @@
                 "value": "Delete"
               },
               "parameters": [
-                "players",
+                "Shaman",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Necromancer",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "pc_name_text",
                 ""
               ]
             }
           ]
         },
         {
-          "disabled": true,
-          "infiniteLoopWarning": true,
-          "type": "BuiltinCommonInstructions::While",
-          "whileConditions": [
-            {
-              "type": {
-                "value": "THNK::OnMessage"
-              },
-              "parameters": [
-                "",
-                "\"StartLeftInput\"",
-                "",
-                ""
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "RedHero",
-                "players",
-                "="
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetObjectVariableAsBoolean"
-              },
-              "parameters": [
-                "players",
-                "Inputs.Left",
-                "True"
-              ]
-            }
-          ]
-        },
-        {
-          "disabled": true,
-          "infiniteLoopWarning": true,
-          "type": "BuiltinCommonInstructions::While",
-          "whileConditions": [
-            {
-              "type": {
-                "value": "THNK::OnMessage"
-              },
-              "parameters": [
-                "",
-                "\"StartLeftInput\"",
-                "",
-                ""
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "RedHero",
-                "players",
-                "="
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetObjectVariableAsBoolean"
-              },
-              "parameters": [
-                "players",
-                "Inputs.Left",
-                "True"
-              ]
-            }
-          ]
-        },
-        {
-          "disabled": true,
           "infiniteLoopWarning": true,
           "type": "BuiltinCommonInstructions::While",
           "whileConditions": [
@@ -2074,9 +2104,19 @@
                 "value": "THNK::UseLinkedObjects"
               },
               "parameters": [
-                "RedHero",
-                "players",
-                "="
+                "",
+                "Necromancer",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                ""
               ]
             }
           ],
@@ -2086,7 +2126,17 @@
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "players",
+                "Necromancer",
+                "Inputs.Right",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Shaman",
                 "Inputs.Right",
                 "True"
               ]
@@ -2094,7 +2144,128 @@
           ]
         },
         {
-          "disabled": true,
+          "infiniteLoopWarning": true,
+          "type": "BuiltinCommonInstructions::While",
+          "whileConditions": [
+            {
+              "type": {
+                "value": "THNK::OnMessage"
+              },
+              "parameters": [
+                "",
+                "\"StartLeftInput\"",
+                "",
+                ""
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Necromancer",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Necromancer",
+                "Inputs.Left",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Shaman",
+                "Inputs.Left",
+                "True"
+              ]
+            }
+          ]
+        },
+        {
+          "infiniteLoopWarning": true,
+          "type": "BuiltinCommonInstructions::While",
+          "whileConditions": [
+            {
+              "type": {
+                "value": "THNK::OnMessage"
+              },
+              "parameters": [
+                "",
+                "\"StartJump\"",
+                "",
+                ""
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Necromancer",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Necromancer",
+                "Inputs.Jump",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Shaman",
+                "Inputs.Jump",
+                "True"
+              ]
+            }
+          ]
+        },
+        {
           "infiniteLoopWarning": true,
           "type": "BuiltinCommonInstructions::While",
           "whileConditions": [
@@ -2116,9 +2287,19 @@
                 "value": "THNK::UseLinkedObjects"
               },
               "parameters": [
-                "RedHero",
-                "players",
-                "="
+                "",
+                "Necromancer",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                ""
               ]
             }
           ],
@@ -2126,6 +2307,153 @@
             {
               "type": {
                 "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Necromancer",
+                "Inputs.Right",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Shaman",
+                "Inputs.Right",
+                "False"
+              ]
+            }
+          ]
+        },
+        {
+          "infiniteLoopWarning": true,
+          "type": "BuiltinCommonInstructions::While",
+          "whileConditions": [
+            {
+              "type": {
+                "value": "THNK::OnMessage"
+              },
+              "parameters": [
+                "",
+                "\"EndLeftInput\"",
+                "",
+                ""
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Necromancer",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Necromancer",
+                "Inputs.Left",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Shaman",
+                "Inputs.Left",
+                "False"
+              ]
+            }
+          ]
+        },
+        {
+          "infiniteLoopWarning": true,
+          "type": "BuiltinCommonInstructions::While",
+          "whileConditions": [
+            {
+              "type": {
+                "value": "THNK::OnMessage"
+              },
+              "parameters": [
+                "",
+                "\"EndJump\"",
+                "",
+                ""
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Necromancer",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "Shaman",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Shaman",
+                "Inputs.Jump",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Necromancer",
+                "Inputs.Jump",
+                "False"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
               },
               "parameters": [
                 "players",
@@ -2133,41 +2461,55 @@
                 "True"
               ]
             }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "players",
+                "0",
+                "400",
+                "0"
+              ]
+            }
           ]
         },
         {
-          "disabled": true,
-          "infiniteLoopWarning": true,
-          "type": "BuiltinCommonInstructions::While",
-          "whileConditions": [
-            {
-              "type": {
-                "value": "THNK::OnMessage"
-              },
-              "parameters": [
-                "",
-                "\"StartJump\"",
-                "",
-                ""
-              ]
-            }
-          ],
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "value": "THNK::UseLinkedObjects"
+                "value": "ObjectVariableAsBoolean"
               },
               "parameters": [
-                "RedHero",
                 "players",
-                "="
+                "Inputs.Left",
+                "True"
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "SetObjectVariableAsBoolean"
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "players",
+                "180",
+                "400",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
               },
               "parameters": [
                 "players",
@@ -2175,368 +2517,17 @@
                 "True"
               ]
             }
-          ]
-        },
-        {
-          "disabled": true,
-          "infiniteLoopWarning": true,
-          "type": "BuiltinCommonInstructions::While",
-          "whileConditions": [
-            {
-              "type": {
-                "value": "THNK::OnMessage"
-              },
-              "parameters": [
-                "",
-                "\"StartJump\"",
-                "",
-                ""
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "RedHero",
-                "players",
-                "="
-              ]
-            }
           ],
           "actions": [
             {
               "type": {
-                "value": "SetObjectVariableAsBoolean"
+                "value": "AddForceAL"
               },
               "parameters": [
                 "players",
-                "Inputs.Jump",
-                "True"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "disabled": true,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "DepartScene"
-          },
-          "parameters": [
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
-          },
-          "parameters": [
-            "",
-            "\"Level\" + server_map",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "type": {
-            "value": "ZoomCamera"
-          },
-          "parameters": [
-            "",
-            "0.5",
-            "",
-            ""
-          ]
-        }
-      ],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Repeat",
-          "repeatExpression": "5",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "found_id",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "infiniteLoopWarning": true,
-              "type": "BuiltinCommonInstructions::While",
-              "whileConditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "found_id",
-                    ">",
-                    "0"
-                  ]
-                }
-              ],
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "found_id",
-                    "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "player_id",
-                    "=",
-                    "RandomInRange(1111,9999)"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::ForEach",
-                  "object": "players",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberObjectVariable"
-                      },
-                      "parameters": [
-                        "players",
-                        "id",
-                        "=",
-                        "player_id"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "found_id",
-                        "=",
-                        "1"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "shaman_amount",
-                    "=",
-                    "Count(team_shaman)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "necromancer_amount",
-                    "=",
-                    "Count(team_necromancer)"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "shaman_amount",
-                    "<",
-                    "necromancer_amount"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Shaman",
-                    "shaman_spawn.X()+Random(shaman_spawn.Width()-Shaman.Width())",
-                    "shaman_spawn.Y()+Random(shaman_spawn.Height()-Shaman.Height())",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Shaman",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "shaman_amount",
-                    "<",
-                    "necromancer_amount"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Necromancer",
-                    "necromancer_spawn.X()+Random(necromancer_spawn.Width()-Necromancer.Width())",
-                    "necromancer_spawn.Y()+Random(necromancer_spawn.Height()-Necromancer.Height())",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Necromancer",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "pc_name_text",
-                    "0",
-                    "0",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "id",
-                    "=",
-                    "player_id"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "pc_name_text",
-                    "Text",
-                    "=",
-                    "ToString(player_id)"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
-    },
-    {
-      "disabled": true,
-      "type": "BuiltinCommonInstructions::ForEach",
-      "object": "players",
-      "conditions": [],
-      "actions": [],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::ForEach",
-          "object": "pc_name",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberObjectVariable"
-              },
-              "parameters": [
-                "pc_name",
-                "id",
-                "=",
-                "players.id"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "MettreXY"
-              },
-              "parameters": [
-                "pc_name",
-                "=",
-                "players.X()+players.Width()/2-pc_name.Width()/2",
-                "=",
-                "players.Y()-pc_name.Height()"
+                "270",
+                "400",
+                "0"
               ]
             }
           ]
@@ -2611,15 +2602,6 @@
     {
       "name": "Opacity",
       "type": "OpacityCapability::OpacityBehavior"
-    },
-    {
-      "name": "Physics2",
-      "type": "Physics2::Physics2Behavior",
-      "gravityX": 0,
-      "gravityY": 9.8,
-      "worldScale": 100,
-      "scaleX": 100,
-      "scaleY": 100
     },
     {
       "name": "PixelPerfectPlatformerCharacter",
