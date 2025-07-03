@@ -281,9 +281,9 @@
       "effects": [],
       "behaviors": [
         {
-          "canBeGrabbed": true,
           "name": "Platform",
           "type": "PlatformBehavior::PlatformBehavior",
+          "canBeGrabbed": true,
           "platformType": "NormalPlatform",
           "yGrabOffset": 0
         }
@@ -370,9 +370,9 @@
           "IsDecelerating": false
         },
         {
-          "canGrabPlatforms": true,
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "canGrabPlatforms": true,
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
           "canGrabWithoutMoving": true,
@@ -861,9 +861,9 @@
           "IsDecelerating": false
         },
         {
-          "canGrabPlatforms": true,
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "canGrabPlatforms": true,
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
           "canGrabWithoutMoving": true,
@@ -1258,23 +1258,35 @@
           "eventsSheetExpanded": true
         },
         {
-          "disabled": true,
           "type": "BuiltinCommonInstructions::ForEach",
           "object": "players",
           "conditions": [
             {
               "type": {
-                "value": "NumberObjectVariable"
+                "value": "BooleanObjectVariable"
               },
               "parameters": [
                 "players",
-                "id",
-                "=",
+                "PlayerState.Own",
+                "True",
                 "PlayerState.id"
               ]
             }
           ],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "CentreCamera"
+              },
+              "parameters": [
+                "",
+                "players",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1321,28 +1333,6 @@
                 "players.X()+players.Width()/2-pc_name.Width()/2",
                 "=",
                 "players.Y()-pc_name.Height()"
-              ]
-            },
-            {
-              "type": {
-                "value": "SmoothCamera::SmoothCamera::SetFollowOnX"
-              },
-              "parameters": [
-                "players",
-                "SmoothCamera",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SmoothCamera::SmoothCamera::SetFollowOnY"
-              },
-              "parameters": [
-                "players",
-                "SmoothCamera",
-                "yes",
-                ""
               ]
             }
           ]
@@ -2885,10 +2875,6 @@
     {
       "name": "SmoothCamera",
       "type": "SmoothCamera::SmoothCamera"
-    },
-    {
-      "name": "SmoothPlatformerCamera",
-      "type": "SmoothCamera::SmoothPlatformerCamera"
     },
     {
       "name": "SynchronizedObject",
