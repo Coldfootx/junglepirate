@@ -7,7 +7,7 @@
     "revision": 0
   },
   "properties": {
-    "adaptGameResolutionAtRuntime": true,
+    "adaptGameResolutionAtRuntime": false,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
     "folderProject": true,
@@ -16,7 +16,7 @@
     "pixelsRounding": true,
     "projectUuid": "1c1d55da-2df3-4494-bd7f-3f12f2d6caa3",
     "scaleMode": "linear",
-    "sizeOnStartupMode": "",
+    "sizeOnStartupMode": "scaleOuter",
     "templateSlug": "starting-platformer",
     "version": "1.0.0",
     "name": "Jungle Pirate",
@@ -366,6 +366,1696 @@
         "name": "assets\\id_bg.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Apple.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Apple.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art RPG Items/Food/73604edb648bb0e66b31435c5ae9c66aafe60bc23324a76f00c24b9adc13326b_Apple.png",
+          "name": "Apple.png"
+        }
+      },
+      {
+        "file": "assets/Gold 4.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "44ddc3462dc07246225aaf1879f2daed6a983622380026dfe523482ab3710cf0_Gold 4.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter by Pixel boy/Sound/44ddc3462dc07246225aaf1879f2daed6a983622380026dfe523482ab3710cf0_Gold 4.aac",
+          "name": "gdevelop-asset-store"
+        }
+      },
+      {
+        "file": "assets/Monster.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Monster.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Wesxdz Game Assets/skullcup/Characters/efcc4c7bd5d61af14041ce090f9facb0991e5fe42471ed980a92fd8322d97cc0_Monster.png",
+          "name": "Monster.png"
+        }
+      },
+      {
+        "file": "assets/Monster.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Monster.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Skeleton.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Skeleton.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Wesxdz Game Assets/skullcup/Characters/461120bb128b73e3cfeb0e7626fef5902eac124a73b89d58c0a170152370ff77_Skeleton.png",
+          "name": "Skeleton.png"
+        }
+      },
+      {
+        "file": "assets/Skeleton.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Skeleton.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Attack_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/24589fa8538f5bb60548652bd3527a9f615f003f02b24347452b4003bbcdfaad_Whale_Attack_1.png",
+          "name": "Whale_Attack_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_10.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/0bea26ede54b7d04f5b035a591c973e80450808c8974ce97ecb125baf43e2f96_Whale_Attack_10.png",
+          "name": "Whale_Attack_10.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_11.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/bdd964facdb3b709a511346df42bc412dbf3ea54ec2e9a8c00c760f018f90a19_Whale_Attack_11.png",
+          "name": "Whale_Attack_11.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/c546d36a28e173b09c2fe5d0e99252308be05fe2d2714f23169e0c84e4af83f9_Whale_Attack_2.png",
+          "name": "Whale_Attack_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/c546d36a28e173b09c2fe5d0e99252308be05fe2d2714f23169e0c84e4af83f9_Whale_Attack_3.png",
+          "name": "Whale_Attack_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6b7db0283f89bd7daf6e1749d770775504cf6799a654030bc779f858db0d737a_Whale_Attack_4.png",
+          "name": "Whale_Attack_4.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6b7db0283f89bd7daf6e1749d770775504cf6799a654030bc779f858db0d737a_Whale_Attack_5.png",
+          "name": "Whale_Attack_5.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/38fcd6dacbfa57d03048d579deeca3fc6a0a0b50e1376fa8f5a0283e49cac529_Whale_Attack_6.png",
+          "name": "Whale_Attack_6.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_7.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/38fcd6dacbfa57d03048d579deeca3fc6a0a0b50e1376fa8f5a0283e49cac529_Whale_Attack_7.png",
+          "name": "Whale_Attack_7.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_8.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/d2e59eb0f56ae44035cc173a4ad512e672f21709575a302ae5d56a41c638a94a_Whale_Attack_8.png",
+          "name": "Whale_Attack_8.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Attack_9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Attack_9.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/0bea26ede54b7d04f5b035a591c973e80450808c8974ce97ecb125baf43e2f96_Whale_Attack_9.png",
+          "name": "Whale_Attack_9.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Ground_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Ground_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/05a92b2a213a5f59b8416cd3ad6157886108c8719422c312ca58b6a8a6b1e329_Whale_Dead Ground_1.png",
+          "name": "Whale_Dead Ground_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Ground_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Ground_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/05a92b2a213a5f59b8416cd3ad6157886108c8719422c312ca58b6a8a6b1e329_Whale_Dead Ground_2.png",
+          "name": "Whale_Dead Ground_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Ground_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Ground_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/442e6c80a36d187ae79422461a45d1d075b4f505d885cbc4a51a752f6ccb664e_Whale_Dead Ground_3.png",
+          "name": "Whale_Dead Ground_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Ground_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Ground_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/b20fa381cd450a7f0399ebafe64afc89ea928657937a651ecb668ae326e59233_Whale_Dead Ground_4.png",
+          "name": "Whale_Dead Ground_4.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Hit_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Hit_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/4c7fea6f8abd111e2085379d0614c7c684d5bc2a99a90d08fb86f8440f45e22a_Whale_Dead Hit_1.png",
+          "name": "Whale_Dead Hit_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Hit_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Hit_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/4c7fea6f8abd111e2085379d0614c7c684d5bc2a99a90d08fb86f8440f45e22a_Whale_Dead Hit_2.png",
+          "name": "Whale_Dead Hit_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Hit_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Hit_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/4c7fea6f8abd111e2085379d0614c7c684d5bc2a99a90d08fb86f8440f45e22a_Whale_Dead Hit_3.png",
+          "name": "Whale_Dead Hit_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Hit_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Hit_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/ba19d6ff08e49b21ac9d734eb74591db9977fe17992e105b6f218e1a56ae5bed_Whale_Dead Hit_4.png",
+          "name": "Whale_Dead Hit_4.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Hit_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Hit_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/ba19d6ff08e49b21ac9d734eb74591db9977fe17992e105b6f218e1a56ae5bed_Whale_Dead Hit_5.png",
+          "name": "Whale_Dead Hit_5.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Dead Hit_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Dead Hit_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/20186e096e189c13961a1e24b6bc674bf2262585efa5705e491db78550a04e87_Whale_Dead Hit_6.png",
+          "name": "Whale_Dead Hit_6.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Fall_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Fall_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/556a9b54b9883e298dc0aaedccadcfb57629dc2267fb12f7d3bf1ad1c5bfe5a6_Whale_Fall_1.png",
+          "name": "Whale_Fall_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Fall_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Fall_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/7621a818b222adffb5d5bdc8f7b8d6931fa84a2aa0488dc262faf1256ff78d3a_Whale_Fall_2.png",
+          "name": "Whale_Fall_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Ground_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Ground_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/5c0c2e11f9c5eb49f2a3c15aeffae2a7e51a5645458b6f81834e5885e3625660_Whale_Ground_1.png",
+          "name": "Whale_Ground_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Ground_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Ground_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/5c0c2e11f9c5eb49f2a3c15aeffae2a7e51a5645458b6f81834e5885e3625660_Whale_Ground_2.png",
+          "name": "Whale_Ground_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Ground_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Ground_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/bdd964facdb3b709a511346df42bc412dbf3ea54ec2e9a8c00c760f018f90a19_Whale_Ground_3.png",
+          "name": "Whale_Ground_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Hit_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Hit_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/502374c57c2c60600a5213897e946ce09d23f8f9f5a32836e7e0eb5b1a9b3873_Whale_Hit_1.png",
+          "name": "Whale_Hit_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Hit_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Hit_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/502374c57c2c60600a5213897e946ce09d23f8f9f5a32836e7e0eb5b1a9b3873_Whale_Hit_2.png",
+          "name": "Whale_Hit_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Hit_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Hit_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/502374c57c2c60600a5213897e946ce09d23f8f9f5a32836e7e0eb5b1a9b3873_Whale_Hit_3.png",
+          "name": "Whale_Hit_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Hit_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Hit_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/4f57c7927f3518104bd28457c4ccd26c4ab6fa4bf2d3957a0691230f0ffe1e15_Whale_Hit_4.png",
+          "name": "Whale_Hit_4.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Hit_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Hit_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/e6b9038b926673bf4ae3381fdcdc222f215215a63200263f228665ad7dda643b_Whale_Hit_5.png",
+          "name": "Whale_Hit_5.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Hit_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Hit_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/e6b9038b926673bf4ae3381fdcdc222f215215a63200263f228665ad7dda643b_Whale_Hit_6.png",
+          "name": "Whale_Hit_6.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Hit_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Hit_7.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/2aeac6b1d1c98ea83d841f046ea05f29dedc0dd4741a32702841aef631fdc828_Whale_Hit_7.png",
+          "name": "Whale_Hit_7.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_1.png",
+          "name": "Whale_Idle_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_10.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_10.png",
+          "name": "Whale_Idle_10.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_11.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_11.png",
+          "name": "Whale_Idle_11.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_12.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_12.png",
+          "name": "Whale_Idle_12.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_13.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_13.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_13.png",
+          "name": "Whale_Idle_13.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_14.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_14.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_14.png",
+          "name": "Whale_Idle_14.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_15.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_15.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_15.png",
+          "name": "Whale_Idle_15.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_16.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_16.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_16.png",
+          "name": "Whale_Idle_16.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_17.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_17.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_17.png",
+          "name": "Whale_Idle_17.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_18.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_18.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_18.png",
+          "name": "Whale_Idle_18.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_19.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_19.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/50376dde47e3f03c9c2d3696a6fada1bdd7c99d23501766da7be3e8e3bbb0166_Whale_Idle_19.png",
+          "name": "Whale_Idle_19.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_2.png",
+          "name": "Whale_Idle_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_20.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_20.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_20.png",
+          "name": "Whale_Idle_20.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_21.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_21.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/96a5a670c740b09d81b7ad7fdc0a90e2df165ac5e565daf45fe99f4a9f305a13_Whale_Idle_21.png",
+          "name": "Whale_Idle_21.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_22.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_22.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/96a5a670c740b09d81b7ad7fdc0a90e2df165ac5e565daf45fe99f4a9f305a13_Whale_Idle_22.png",
+          "name": "Whale_Idle_22.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_23.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_23.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_23.png",
+          "name": "Whale_Idle_23.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_24.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_24.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_24.png",
+          "name": "Whale_Idle_24.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_25.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_25.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/9485d0777b6e16d58454dc965caf4ca249ce4bbf920d0da00c121ea58569dfa5_Whale_Idle_25.png",
+          "name": "Whale_Idle_25.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_26.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_26.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/e5ad1527b5b4f0f5306eec6005a842c3ca2b529cf9dd39f3584cc11dcffbb239_Whale_Idle_26.png",
+          "name": "Whale_Idle_26.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_27.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_27.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/fd9e55eaed4a924e660377f1cd4abc2303b97234c3f76874f79cf55e1cc2a7a3_Whale_Idle_27.png",
+          "name": "Whale_Idle_27.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_28.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_28.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/cbcb116b1f930843a3718f8fda88bd7b2fd9370946751992058977f11b38d559_Whale_Idle_28.png",
+          "name": "Whale_Idle_28.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_29.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_29.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/752a61ee4ede5d5a28ad7d73ca73166a282d3335e987e6092c1292b6e02e428d_Whale_Idle_29.png",
+          "name": "Whale_Idle_29.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_3.png",
+          "name": "Whale_Idle_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_30.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_30.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/f521ca608c48e6eebc3542a8e41dbd8544270e2114964c557106e1a0a9afa708_Whale_Idle_30.png",
+          "name": "Whale_Idle_30.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_31.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_31.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/e46fffda756ff950f4907303eb6b4c169466d977787f30168a464dee4f3c8ab0_Whale_Idle_31.png",
+          "name": "Whale_Idle_31.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_32.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_32.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/0ee2ba83b4c0e67843e0c15b25686dad89366483a7313a6bf65225573272bb7e_Whale_Idle_32.png",
+          "name": "Whale_Idle_32.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_33.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_33.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/a06c9eee9c477ab9e6d176ce7a1f18eb2a9f44c9a58097741e2d817100e4c66e_Whale_Idle_33.png",
+          "name": "Whale_Idle_33.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_34.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_34.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_34.png",
+          "name": "Whale_Idle_34.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_35.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_35.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_35.png",
+          "name": "Whale_Idle_35.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_36.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_36.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_36.png",
+          "name": "Whale_Idle_36.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_37.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_37.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_37.png",
+          "name": "Whale_Idle_37.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_38.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_38.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_38.png",
+          "name": "Whale_Idle_38.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_39.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_39.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_39.png",
+          "name": "Whale_Idle_39.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_4.png",
+          "name": "Whale_Idle_4.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_40.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_40.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_40.png",
+          "name": "Whale_Idle_40.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_41.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_41.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_41.png",
+          "name": "Whale_Idle_41.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_42.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_42.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_42.png",
+          "name": "Whale_Idle_42.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_43.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_43.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/6d5cbeb7641432db702a6c4ed6fb6b4fd243bacea728a3f4a79b098167228674_Whale_Idle_43.png",
+          "name": "Whale_Idle_43.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_44.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_44.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/50376dde47e3f03c9c2d3696a6fada1bdd7c99d23501766da7be3e8e3bbb0166_Whale_Idle_44.png",
+          "name": "Whale_Idle_44.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_5.png",
+          "name": "Whale_Idle_5.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_6.png",
+          "name": "Whale_Idle_6.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_7.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_7.png",
+          "name": "Whale_Idle_7.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_8.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_8.png",
+          "name": "Whale_Idle_8.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Idle_9.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Idle_9.png",
+          "name": "Whale_Idle_9.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Jump Anticipation.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Jump Anticipation.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/7b6fc6a7f57a892230d1cf0dee229026c4e0a6884368b43fa56ed4640d31328f_Whale_Jump Anticipation.png",
+          "name": "Whale_Jump Anticipation.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Jump_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Jump_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/a5e387ef2f922e47bcc5d5af416e753dfebb24055388fa1f3db06609b0f9fe82_Whale_Jump_1.png",
+          "name": "Whale_Jump_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Jump_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Jump_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/a5e387ef2f922e47bcc5d5af416e753dfebb24055388fa1f3db06609b0f9fe82_Whale_Jump_2.png",
+          "name": "Whale_Jump_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Jump_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Jump_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/c544f7752dceaf513e411493bef77a72e98e65dcc34a4bc5b979f4025f2f417b_Whale_Jump_3.png",
+          "name": "Whale_Jump_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Jump_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Jump_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/0bc400314cea14070dc54fc4b98fface1e383e84535ee3435f914f6b6300a59d_Whale_Jump_4.png",
+          "name": "Whale_Jump_4.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/818e5b6a21d5df1a9f818da893cff211f788750a19e9f2d3bc1a236c3caa11fd_Whale_Run_1.png",
+          "name": "Whale_Run_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_10.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/2b09d18f92615853df9ac6ee526265cdaf77df98bd2411b8e514b2868f09c59e_Whale_Run_10.png",
+          "name": "Whale_Run_10.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_11.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/2b09d18f92615853df9ac6ee526265cdaf77df98bd2411b8e514b2868f09c59e_Whale_Run_11.png",
+          "name": "Whale_Run_11.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_12.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/70586c30757f57b67531d0939c70fea13500e8ff646fc4c693a73ca536629831_Whale_Run_12.png",
+          "name": "Whale_Run_12.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_13.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_13.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/5a435aef521c96b8f885cfab67603607663152984ea2cf7ef00618ead56ff90d_Whale_Run_13.png",
+          "name": "Whale_Run_13.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_14.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_14.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/5a435aef521c96b8f885cfab67603607663152984ea2cf7ef00618ead56ff90d_Whale_Run_14.png",
+          "name": "Whale_Run_14.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/b01c4746592454dc0182d48b899b64cceb86568a7c86e02413e7fc3e21e09d5e_Whale_Run_2.png",
+          "name": "Whale_Run_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/3bfd45a98792656b1ef9049ae5096273cd5da4cf2c0d6e888bfd295d12891360_Whale_Run_3.png",
+          "name": "Whale_Run_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/3bfd45a98792656b1ef9049ae5096273cd5da4cf2c0d6e888bfd295d12891360_Whale_Run_4.png",
+          "name": "Whale_Run_4.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/693a167f3bff0544e8415a94af1d69a34d153bb3b1f85fce1e1ceeb2a747b760_Whale_Run_5.png",
+          "name": "Whale_Run_5.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/ee4d1505a4547896082b8e4ae7922367effad0e6e04fccfb95d9464789be4dad_Whale_Run_6.png",
+          "name": "Whale_Run_6.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_7.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/ee4d1505a4547896082b8e4ae7922367effad0e6e04fccfb95d9464789be4dad_Whale_Run_7.png",
+          "name": "Whale_Run_7.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_8.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/5f707c2065b3eec6ef5ce4c8404974ab35f4cf6acf7e1a80e61b4ab2e3656d59_Whale_Run_8.png",
+          "name": "Whale_Run_8.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Run_9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Run_9.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/a68c209206e306c7db91801b3761d19ace94bf3bc0334ee85c8ea03afc185f86_Whale_Run_9.png",
+          "name": "Whale_Run_9.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/34f1c95ed53e56a146fcc3e5e1f93c9c1d12d9d7a86c85b38828c8c52e6976bc_Whale_Swalow Bomb_1.png",
+          "name": "Whale_Swalow Bomb_1.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_10.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/18b3ac8ec3fae98843d6fe9afd6e81b9d7b0470c8aa5f039533fedb3c7799c3c_Whale_Swalow Bomb_10.png",
+          "name": "Whale_Swalow Bomb_10.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/1bb3783b6f0ced6cfd5f2af216927f4e009dca9c993d0eddecf25533c48007b8_Whale_Swalow Bomb_2.png",
+          "name": "Whale_Swalow Bomb_2.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/ae634f5d9d1d0d634ac29d9818c686fb209e754417e26be08a4989cd7815f9cf_Whale_Swalow Bomb_3.png",
+          "name": "Whale_Swalow Bomb_3.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/a742f2769131cd1f21091b20f6e2dfc29917da1d9dd07a271e6ada442c7700ef_Whale_Swalow Bomb_4.png",
+          "name": "Whale_Swalow Bomb_4.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/a742f2769131cd1f21091b20f6e2dfc29917da1d9dd07a271e6ada442c7700ef_Whale_Swalow Bomb_5.png",
+          "name": "Whale_Swalow Bomb_5.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/a63186a6de2f8e5ecdc2db1f8532064966615b11bce1e87c90d7c17002405f2a_Whale_Swalow Bomb_6.png",
+          "name": "Whale_Swalow Bomb_6.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_7.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/bd7e5a8cb6c62874908f42ec10281e9fee91172870d61a21b3c2dcd0beb0f95e_Whale_Swalow Bomb_7.png",
+          "name": "Whale_Swalow Bomb_7.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_8.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/bd7e5a8cb6c62874908f42ec10281e9fee91172870d61a21b3c2dcd0beb0f95e_Whale_Swalow Bomb_8.png",
+          "name": "Whale_Swalow Bomb_8.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Swalow Bomb_9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Whale_Swalow Bomb_9.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Characters/Whale/4fa3cb886f95c0c06b4d3e41a88bc8922dd98feeabbb9b3359d747100b84358c_Whale_Swalow Bomb_9.png",
+          "name": "Whale_Swalow Bomb_9.png"
+        }
+      },
+      {
+        "file": "assets/Whale_Idle_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_5.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_6.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_7.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_8.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_9.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_10.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_11.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_12.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_13.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_13.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_14.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_14.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_15.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_15.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_16.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_16.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_17.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_17.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_18.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_18.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_19.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_19.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_20.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_20.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_21.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_21.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_22.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_22.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_23.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_23.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_24.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_24.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_25.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_25.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_26.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_26.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_27.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_27.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_28.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_28.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_29.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_29.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_30.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_30.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_31.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_31.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_32.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_32.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_33.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_33.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_34.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_34.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_35.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_35.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_36.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_36.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_37.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_37.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_38.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_38.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_39.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_39.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_40.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_40.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_41.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_41.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_42.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_42.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_43.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_43.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Whale_Idle_44.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Whale_Idle_44.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -463,6 +2153,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/smoothcamera"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/behaviorremapper"
     }
   ],
   "externalLayouts": [

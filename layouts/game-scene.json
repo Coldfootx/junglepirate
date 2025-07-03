@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.25504554733543616,
+    "zoomFactor": 0.2912258866911138,
     "windowMask": false
   },
   "objectsGroups": [
@@ -26,7 +26,7 @@
       "name": "team_shaman",
       "objects": [
         {
-          "name": "Shaman"
+          "name": "Whale"
         }
       ]
     },
@@ -42,10 +42,10 @@
       "name": "players",
       "objects": [
         {
-          "name": "Shaman"
+          "name": "Necromancer"
         },
         {
-          "name": "Necromancer"
+          "name": "Whale"
         }
       ]
     },
@@ -122,6 +122,11 @@
           "name": "Own",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "apples",
+          "type": "number",
+          "value": 0
         },
         {
           "name": "id",
@@ -328,6 +333,11 @@
               "name": "Own",
               "type": "boolean",
               "value": false
+            },
+            {
+              "name": "apples",
+              "type": "number",
+              "value": 0
             }
           ]
         },
@@ -351,6 +361,11 @@
               "value": false
             }
           ]
+        },
+        {
+          "name": "apples",
+          "type": "number",
+          "value": 0
         }
       ],
       "effects": [],
@@ -370,11 +385,9 @@
           "IsDecelerating": false
         },
         {
-          "name": "PlatformerObject",
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
-          "canGrabPlatforms": true,
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
+          "canGrabPlatforms": true,
           "canGrabWithoutMoving": true,
           "deceleration": 1500,
           "gravity": 1000,
@@ -383,64 +396,14 @@
           "jumpSustainTime": 0.2,
           "ladderClimbingSpeed": 150,
           "maxFallingSpeed": 700,
-          "maxSpeed": 250,
+          "maxSpeed": 420,
+          "name": "PlatformerObject",
           "slopeMaxAngle": 60,
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "useLegacyTrajectory": false,
           "useRepeatedJump": false,
           "xGrabTolerance": 10,
           "yGrabOffset": 0
-        },
-        {
-          "name": "SmoothCamera",
-          "type": "SmoothCamera::SmoothCamera",
-          "LeftwardSpeed": 0.9,
-          "RightwardSpeed": 0.9,
-          "UpwardSpeed": 0.9,
-          "DownwardSpeed": 0.9,
-          "FollowOnX": true,
-          "FollowOnY": true,
-          "FollowFreeAreaLeft": 0,
-          "FollowFreeAreaRight": 0,
-          "FollowFreeAreaTop": 0,
-          "FollowFreeAreaBottom": 0,
-          "CameraOffsetX": 0,
-          "CameraOffsetY": 0,
-          "CameraDelay": 0,
-          "ForecastTime": 0,
-          "ForecastHistoryDuration": 0,
-          "LogLeftwardSpeed": 2.0247e-320,
-          "LogRightwardSpeed": 2.0247e-320,
-          "LogDownwardSpeed": 2.0247e-320,
-          "LogUpwardSpeed": 2.0247e-320,
-          "DelayedCenterX": 2.0247e-320,
-          "DelayedCenterY": 2.0247e-320,
-          "ForecastHistoryMeanX": 2.0247e-320,
-          "ForecastHistoryMeanY": 2.0247e-320,
-          "ForecastHistoryVarianceX": 2.0247e-320,
-          "ForecastHistoryCovariance": 2.0247e-320,
-          "ForecastHistoryLinearA": 2.0247e-320,
-          "ForecastHistoryLinearB": 2.0247e-320,
-          "ForecastedX": 2.0247e-320,
-          "ForecastedY": 2.0247e-320,
-          "ProjectedNewestX": 2.0247e-320,
-          "ProjectedNewestY": 2.0247e-320,
-          "ProjectedOldestX": 2.0247e-320,
-          "ProjectedOldestY": 2.0247e-320,
-          "ForecastHistoryVarianceY": 2.0247e-320,
-          "Index": 2.0247e-320,
-          "CameraDelayCatchUpSpeed": 0,
-          "CameraExtraDelay": 2.0247e-320,
-          "WaitingSpeedXMax": 2.0247e-320,
-          "WaitingSpeedYMax": 2.0247e-320,
-          "WaitingEnd": 2.0247e-320,
-          "CameraDelayCatchUpDuration": 2.0247e-320,
-          "LeftwardSpeedMax": 9000,
-          "RightwardSpeedMax": 9000,
-          "UpwardSpeedMax": 9000,
-          "DownwardSpeedMax": 9000,
-          "OldX": 9000.000000007454,
-          "OldY": 9000.000000007454,
-          "IsCalledManually": false
         },
         {
           "name": "SynchronizedObject",
@@ -681,7 +644,7 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "shaman_spawn",
+      "name": "whale_spawn",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -801,8 +764,8 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "Shaman",
-      "preScale": 4.8,
+      "name": "Whale",
+      "preScale": 1.8,
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [
@@ -840,6 +803,11 @@
               "name": "Own",
               "type": "boolean",
               "value": false
+            },
+            {
+              "name": "apples",
+              "type": "number",
+              "value": 0
             }
           ]
         }
@@ -861,11 +829,9 @@
           "IsDecelerating": false
         },
         {
-          "name": "PlatformerObject",
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
-          "canGrabPlatforms": true,
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
+          "canGrabPlatforms": true,
           "canGrabWithoutMoving": true,
           "deceleration": 1500,
           "gravity": 1000,
@@ -874,64 +840,14 @@
           "jumpSustainTime": 0.2,
           "ladderClimbingSpeed": 150,
           "maxFallingSpeed": 700,
-          "maxSpeed": 250,
+          "maxSpeed": 420,
+          "name": "PlatformerObject",
           "slopeMaxAngle": 60,
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "useLegacyTrajectory": false,
           "useRepeatedJump": false,
           "xGrabTolerance": 10,
           "yGrabOffset": 0
-        },
-        {
-          "name": "SmoothCamera",
-          "type": "SmoothCamera::SmoothCamera",
-          "LeftwardSpeed": 0.9,
-          "RightwardSpeed": 0.9,
-          "UpwardSpeed": 0.9,
-          "DownwardSpeed": 0.9,
-          "FollowOnX": true,
-          "FollowOnY": true,
-          "FollowFreeAreaLeft": 0,
-          "FollowFreeAreaRight": 0,
-          "FollowFreeAreaTop": 0,
-          "FollowFreeAreaBottom": 0,
-          "CameraOffsetX": 0,
-          "CameraOffsetY": 0,
-          "CameraDelay": 0,
-          "ForecastTime": 0,
-          "ForecastHistoryDuration": 0,
-          "LogLeftwardSpeed": 2.0247e-320,
-          "LogRightwardSpeed": 2.0247e-320,
-          "LogDownwardSpeed": 2.0247e-320,
-          "LogUpwardSpeed": 2.0247e-320,
-          "DelayedCenterX": 2.0247e-320,
-          "DelayedCenterY": 2.0247e-320,
-          "ForecastHistoryMeanX": 2.0247e-320,
-          "ForecastHistoryMeanY": 2.0247e-320,
-          "ForecastHistoryVarianceX": 2.0247e-320,
-          "ForecastHistoryCovariance": 2.0247e-320,
-          "ForecastHistoryLinearA": 2.0247e-320,
-          "ForecastHistoryLinearB": 2.0247e-320,
-          "ForecastedX": 2.0247e-320,
-          "ForecastedY": 2.0247e-320,
-          "ProjectedNewestX": 2.0247e-320,
-          "ProjectedNewestY": 2.0247e-320,
-          "ProjectedOldestX": 2.0247e-320,
-          "ProjectedOldestY": 2.0247e-320,
-          "ForecastHistoryVarianceY": 2.0247e-320,
-          "Index": 2.0247e-320,
-          "CameraDelayCatchUpSpeed": 0,
-          "CameraExtraDelay": 2.0247e-320,
-          "WaitingSpeedXMax": 2.0247e-320,
-          "WaitingSpeedYMax": 2.0247e-320,
-          "WaitingEnd": 2.0247e-320,
-          "CameraDelayCatchUpDuration": 2.0247e-320,
-          "LeftwardSpeedMax": 9000,
-          "RightwardSpeedMax": 9000,
-          "UpwardSpeedMax": 9000,
-          "DownwardSpeedMax": 9000,
-          "OldX": 9000.000000007454,
-          "OldY": 9000.000000007454,
-          "IsCalledManually": false
         },
         {
           "name": "SynchronizedObject",
@@ -949,7 +865,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\Old Shaman_Idle_1.png",
+                  "image": "assets\\Whale_Idle_1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -965,27 +881,27 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 4,
-                        "y": 0
+                        "x": 1,
+                        "y": 6
                       },
                       {
-                        "x": 22,
-                        "y": 0
+                        "x": 65,
+                        "y": 6
                       },
                       {
-                        "x": 22,
-                        "y": 24
+                        "x": 65,
+                        "y": 46
                       },
                       {
-                        "x": 4,
-                        "y": 24
+                        "x": 1,
+                        "y": 46
                       }
                     ]
                   ]
                 },
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\Old Shaman_Idle_2.png",
+                  "image": "assets\\Whale_Idle_2.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1001,27 +917,27 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 4,
-                        "y": 0
+                        "x": 1,
+                        "y": 6
                       },
                       {
-                        "x": 22,
-                        "y": 0
+                        "x": 65,
+                        "y": 6
                       },
                       {
-                        "x": 22,
-                        "y": 24
+                        "x": 65,
+                        "y": 46
                       },
                       {
-                        "x": 4,
-                        "y": 24
+                        "x": 1,
+                        "y": 46
                       }
                     ]
                   ]
                 },
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\Old Shaman_Idle_3.png",
+                  "image": "assets\\Whale_Idle_3.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1037,20 +953,1496 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 4,
-                        "y": 0
+                        "x": 1,
+                        "y": 6
                       },
                       {
-                        "x": 22,
-                        "y": 0
+                        "x": 65,
+                        "y": 6
                       },
                       {
-                        "x": 22,
-                        "y": 24
+                        "x": 65,
+                        "y": 46
                       },
                       {
-                        "x": 4,
-                        "y": 24
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_7.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_8.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_9.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_10.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_11.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_12.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_13.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_14.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_15.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_16.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_17.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_18.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_19.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_20.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_21.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_22.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_23.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_24.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_25.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_26.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_27.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_28.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_29.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_30.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_31.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_32.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_33.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_34.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_35.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_36.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_37.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_38.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_39.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_40.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_41.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_42.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_43.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\Whale_Idle_44.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 6
+                      },
+                      {
+                        "x": 65,
+                        "y": 46
+                      },
+                      {
+                        "x": 1,
+                        "y": 46
                       }
                     ]
                   ]
@@ -1175,6 +2567,92 @@
         "characterSize": 45,
         "color": "0;0;0"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "4e2421c7fbcc2b0a4e0abe7c562504cfa4913eb94d22533d878ed342c0e65e29",
+      "name": "Apple",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "acceleration": 1500,
+          "canGoDownFromJumpthru": true,
+          "canGrabPlatforms": false,
+          "canGrabWithoutMoving": true,
+          "deceleration": 1500,
+          "gravity": 1000,
+          "ignoreDefaultControls": true,
+          "jumpSpeed": 600,
+          "jumpSustainTime": 0.2,
+          "ladderClimbingSpeed": 150,
+          "maxFallingSpeed": 700,
+          "maxSpeed": 250,
+          "name": "PlatformerObject",
+          "slopeMaxAngle": 60,
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "useLegacyTrajectory": false,
+          "useRepeatedJump": false,
+          "xGrabTolerance": 10,
+          "yGrabOffset": 0
+        },
+        {
+          "name": "SynchronizedObject",
+          "type": "THNK::SynchronizedObject"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Apple.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 3,
+                        "y": 2
+                      },
+                      {
+                        "x": 14,
+                        "y": 2
+                      },
+                      {
+                        "x": 14,
+                        "y": 15
+                      },
+                      {
+                        "x": 3,
+                        "y": 15
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1196,16 +2674,19 @@
         "objectName": "Necromancer"
       },
       {
-        "objectName": "Shaman"
+        "objectName": "Whale"
       },
       {
-        "objectName": "shaman_spawn"
+        "objectName": "whale_spawn"
       },
       {
         "objectName": "necromancer_spawn"
       },
       {
         "objectName": "pc_name_text"
+      },
+      {
+        "objectName": "Apple"
       }
     ]
   },
@@ -1307,7 +2788,7 @@
               },
               "parameters": [
                 "",
-                "Shaman",
+                "Whale",
                 ""
               ]
             },
@@ -1637,35 +3118,210 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+        },
         {
-          "type": {
-            "value": "RepeatEveryXSeconds::RepeatTimer::Repeat2"
-          },
-          "parameters": [
-            "debugtext",
-            "RepeatTimer",
-            "\"debug_text_loop\"",
-            "1",
-            ""
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "RepeatEveryXSeconds::RepeatTimer::Repeat2"
+              },
+              "parameters": [
+                "debugtext",
+                "RepeatTimer",
+                "\"debug_text_loop\"",
+                "1",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "players",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "players",
+                    "PlayerState.Own",
+                    "True",
+                    "PlayerState.id"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "debugtext",
+                    "Text",
+                    "=",
+                    "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+PlayerState.id+\" - apples: \"+ToString(players.PlayerState.apples)"
+                  ]
+                }
+              ]
+            }
           ]
-        }
-      ],
-      "actions": [
+        },
         {
-          "type": {
-            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-          },
-          "parameters": [
-            "debugtext",
-            "Text",
-            "=",
-            "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+PlayerState.id"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "players",
+                "Apple",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "functions::play_apple_pick"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AjoutObjConcern"
+                  },
+                  "parameters": [
+                    "",
+                    "players"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "players",
+                        "<=",
+                        "Apple.Y()+ScreenHeight()/2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "players",
+                        ">=",
+                        "Apple.Y()-ScreenHeight()/2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "players",
+                        "<=",
+                        "Apple.X()+ScreenWidth()/2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "players",
+                        ">=",
+                        "Apple.X()-ScreenWidth()/2"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanObjectVariable"
+                          },
+                          "parameters": [
+                            "players",
+                            "PlayerState.Own",
+                            "True",
+                            "PlayerState.id"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "functions::close_by"
+              },
+              "parameters": [
+                "",
+                "players",
+                "Apple",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "players",
+                    "PlayerState.Own",
+                    "True",
+                    "PlayerState.id"
+                  ]
+                }
+              ],
+              "actions": []
+            }
           ]
         }
       ]
@@ -1890,7 +3546,7 @@
               "parameters": [
                 "shaman_amount",
                 "=",
-                "Count(Shaman)"
+                "Count(Whale)"
               ]
             }
           ],
@@ -1904,7 +3560,7 @@
                   },
                   "parameters": [
                     "shaman_amount",
-                    ">=",
+                    ">",
                     "necromancer_amount"
                   ]
                 }
@@ -1965,7 +3621,7 @@
                   },
                   "parameters": [
                     "shaman_amount",
-                    ">=",
+                    ">",
                     "necromancer_amount"
                   ]
                 }
@@ -1977,7 +3633,7 @@
                   },
                   "parameters": [
                     "",
-                    "Shaman",
+                    "Whale",
                     "players",
                     ""
                   ]
@@ -1988,9 +3644,9 @@
                   },
                   "parameters": [
                     "",
-                    "Shaman",
-                    "shaman_spawn.X()+Random(shaman_spawn.Width()-Shaman.Width())",
-                    "shaman_spawn.Y()+Random(shaman_spawn.Height()-Shaman.Height())",
+                    "Whale",
+                    "whale_spawn.X() + Random(whale_spawn.Width() - Whale.Width())",
+                    "whale_spawn.Y() + Random(whale_spawn.Height() - Whale.Height())",
                     ""
                   ]
                 },
@@ -2000,7 +3656,7 @@
                   },
                   "parameters": [
                     "",
-                    "Shaman",
+                    "Whale",
                     ""
                   ]
                 },
@@ -2009,7 +3665,7 @@
                     "value": "SetObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "Shaman",
+                    "Whale",
                     "PlayerState[THNK::PickedPlayer()].Own",
                     "True"
                   ]
@@ -2127,7 +3783,7 @@
                   },
                   "parameters": [
                     "",
-                    "Shaman",
+                    "Whale",
                     ""
                   ]
                 },
@@ -2159,7 +3815,7 @@
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
-                    "Shaman",
+                    "Whale",
                     "id",
                     "=",
                     "player_id"
@@ -2245,64 +3901,72 @@
                 "",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "",
-                "pc_name_text",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "",
-                "Shaman",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "THNK::UseLinkedObjects"
-              },
-              "parameters": [
-                "",
-                "Necromancer",
-                ""
-              ]
             }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Shaman",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Necromancer",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "pc_name_text",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "THNK::UseLinkedObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "pc_name_text",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "THNK::UseLinkedObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Whale",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "THNK::UseLinkedObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Necromancer",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "pc_name_text",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Necromancer",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Whale",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -2340,7 +4004,7 @@
               },
               "parameters": [
                 "",
-                "Shaman",
+                "Whale",
                 ""
               ]
             }
@@ -2361,7 +4025,7 @@
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "Shaman",
+                "Whale",
                 "Inputs.Right",
                 "True"
               ]
@@ -2411,7 +4075,7 @@
               },
               "parameters": [
                 "",
-                "Shaman",
+                "Whale",
                 ""
               ]
             }
@@ -2432,7 +4096,7 @@
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "Shaman",
+                "Whale",
                 "Inputs.Left",
                 "True"
               ]
@@ -2482,7 +4146,7 @@
               },
               "parameters": [
                 "",
-                "Shaman",
+                "Whale",
                 ""
               ]
             }
@@ -2503,7 +4167,7 @@
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "Shaman",
+                "Whale",
                 "Inputs.Jump",
                 "True"
               ]
@@ -2543,7 +4207,7 @@
               },
               "parameters": [
                 "",
-                "Shaman",
+                "Whale",
                 ""
               ]
             }
@@ -2564,7 +4228,7 @@
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "Shaman",
+                "Whale",
                 "Inputs.Right",
                 "False"
               ]
@@ -2604,7 +4268,7 @@
               },
               "parameters": [
                 "",
-                "Shaman",
+                "Whale",
                 ""
               ]
             }
@@ -2625,7 +4289,7 @@
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "Shaman",
+                "Whale",
                 "Inputs.Left",
                 "False"
               ]
@@ -2665,7 +4329,7 @@
               },
               "parameters": [
                 "",
-                "Shaman",
+                "Whale",
                 ""
               ]
             }
@@ -2676,7 +4340,7 @@
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "Shaman",
+                "Whale",
                 "Inputs.Jump",
                 "False"
               ]
@@ -2710,13 +4374,11 @@
           "actions": [
             {
               "type": {
-                "value": "AddForceAL"
+                "value": "PlatformBehavior::SimulateRightKey"
               },
               "parameters": [
                 "players",
-                "0",
-                "400",
-                "0"
+                "PlatformerObject"
               ]
             }
           ]
@@ -2738,13 +4400,11 @@
           "actions": [
             {
               "type": {
-                "value": "AddForceAL"
+                "value": "PlatformBehavior::SimulateLeftKey"
               },
               "parameters": [
                 "players",
-                "180",
-                "400",
-                "0"
+                "PlatformerObject"
               ]
             }
           ]
@@ -2766,13 +4426,63 @@
           "actions": [
             {
               "type": {
-                "value": "AddForceAL"
+                "value": "PlatformBehavior::SimulateJumpKey"
               },
               "parameters": [
                 "players",
-                "270",
-                "400",
-                "0"
+                "PlatformerObject"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Apple",
+          "conditions": [],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "players",
+                    "Apple",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "players",
+                    "PlayerState[THNK::PickedPlayer()].apples",
+                    "=",
+                    "players.PlayerState[THNK::PickedPlayer()].apples+1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Apple",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -2871,10 +4581,6 @@
     {
       "name": "Scale",
       "type": "ScalableCapability::ScalableBehavior"
-    },
-    {
-      "name": "SmoothCamera",
-      "type": "SmoothCamera::SmoothCamera"
     },
     {
       "name": "SynchronizedObject",

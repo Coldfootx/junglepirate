@@ -45,6 +45,15 @@
         },
         {
           "name": "join_paste_button"
+        },
+        {
+          "name": "join_back_button"
+        },
+        {
+          "name": "host_final_button"
+        },
+        {
+          "name": "host_copy_button"
         }
       ]
     },
