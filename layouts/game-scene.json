@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.2912258866911138,
+    "zoomFactor": 0.3010461197182484,
     "windowMask": false
   },
   "objectsGroups": [
@@ -54,6 +54,14 @@
       "objects": [
         {
           "name": "pc_name_text"
+        }
+      ]
+    },
+    {
+      "name": "platforms",
+      "objects": [
+        {
+          "name": "Platform_Ground"
         }
       ]
     }
@@ -147,12 +155,12 @@
         {
           "name": "height",
           "type": "number",
-          "value": 10000
+          "value": 3000
         },
         {
           "name": "width",
           "type": "number",
-          "value": 5000
+          "value": 7000
         }
       ]
     }
@@ -203,6 +211,21 @@
       "x": 512,
       "y": -311,
       "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Platform_Ground",
+      "persistentUuid": "dc3d9d37-cded-4aa9-b8ec-fe0d99282e39",
+      "width": 0,
+      "x": 991,
+      "y": -143,
+      "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -385,6 +408,8 @@
           "IsDecelerating": false
         },
         {
+          "name": "PlatformerObject",
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
           "canGrabPlatforms": true,
@@ -397,9 +422,7 @@
           "ladderClimbingSpeed": 150,
           "maxFallingSpeed": 700,
           "maxSpeed": 420,
-          "name": "PlatformerObject",
           "slopeMaxAngle": 60,
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "useLegacyTrajectory": false,
           "useRepeatedJump": false,
           "xGrabTolerance": 10,
@@ -829,6 +852,8 @@
           "IsDecelerating": false
         },
         {
+          "name": "PlatformerObject",
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
           "canGrabPlatforms": true,
@@ -841,9 +866,7 @@
           "ladderClimbingSpeed": 150,
           "maxFallingSpeed": 700,
           "maxSpeed": 420,
-          "name": "PlatformerObject",
           "slopeMaxAngle": 60,
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "useLegacyTrajectory": false,
           "useRepeatedJump": false,
           "xGrabTolerance": 10,
@@ -2572,15 +2595,32 @@
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "4e2421c7fbcc2b0a4e0abe7c562504cfa4913eb94d22533d878ed342c0e65e29",
       "name": "Apple",
+      "preScale": 4.6666,
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
       "behaviors": [
         {
+          "name": "PixelPerfectPlatformerCharacter",
+          "type": "PixelPerfectMovement::PixelPerfectPlatformerCharacter",
+          "PlatformerCharacter": "PlatformerObject",
+          "PixelSize": 1,
+          "OffsetX": 0,
+          "OffsetY": 0,
+          "TargetX": 0,
+          "TargetDirectionX": 0,
+          "TargetY": 0,
+          "TargetDirectionY": 0,
+          "PreviousSpeedX": 2.0247e-320,
+          "IsDecelerating": false
+        },
+        {
+          "name": "PlatformerObject",
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "canGrabPlatforms": false,
           "acceleration": 1500,
           "canGoDownFromJumpthru": true,
-          "canGrabPlatforms": false,
           "canGrabWithoutMoving": true,
           "deceleration": 1500,
           "gravity": 1000,
@@ -2590,9 +2630,7 @@
           "ladderClimbingSpeed": 150,
           "maxFallingSpeed": 700,
           "maxSpeed": 250,
-          "name": "PlatformerObject",
           "slopeMaxAngle": 60,
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
           "useLegacyTrajectory": false,
           "useRepeatedJump": false,
           "xGrabTolerance": 10,
@@ -2819,6 +2857,7 @@
           ]
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -3121,6 +3160,11 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
@@ -3171,6 +3215,32 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ClampCamera"
+              },
+              "parameters": [
+                "",
+                "0",
+                "0",
+                "map.width",
+                "map.height",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
@@ -3183,130 +3253,22 @@
                 "",
                 ""
               ]
-            }
-          ],
-          "actions": [
+            },
             {
               "type": {
-                "value": "functions::play_apple_pick"
+                "value": "AjoutObjConcern"
               },
               "parameters": [
                 "",
-                ""
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "AjoutObjConcern"
-                  },
-                  "parameters": [
-                    "",
-                    "players"
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "PosY"
-                      },
-                      "parameters": [
-                        "players",
-                        "<=",
-                        "Apple.Y()+ScreenHeight()/2"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PosY"
-                      },
-                      "parameters": [
-                        "players",
-                        ">=",
-                        "Apple.Y()-ScreenHeight()/2"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PosX"
-                      },
-                      "parameters": [
-                        "players",
-                        "<=",
-                        "Apple.X()+ScreenWidth()/2"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PosX"
-                      },
-                      "parameters": [
-                        "players",
-                        ">=",
-                        "Apple.X()-ScreenWidth()/2"
-                      ]
-                    }
-                  ],
-                  "actions": [],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "BooleanObjectVariable"
-                          },
-                          "parameters": [
-                            "players",
-                            "PlayerState.Own",
-                            "True",
-                            "PlayerState.id"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "BuiltinCommonInstructions::Once"
-                          },
-                          "parameters": []
-                        }
-                      ],
-                      "actions": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "disabled": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "functions::close_by"
-              },
-              "parameters": [
-                "",
-                "players",
-                "Apple",
-                ""
+                "players"
               ]
             }
           ],
           "actions": [],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "players",
               "conditions": [
                 {
                   "type": {
@@ -3320,7 +3282,86 @@
                   ]
                 }
               ],
-              "actions": []
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "players",
+                        "<",
+                        "Apple.X()+SceneWindowWidth()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "players",
+                        ">",
+                        "Apple.X()-SceneWindowWidth()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "players",
+                        "<",
+                        "Apple.Y()+SceneWindowHeight()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "players",
+                        ">",
+                        "Apple.Y()-SceneWindowHeight()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "functions::play_apple_pick"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Apple",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Apple",
+                        "players.X()+players.Width()/2-Apple.Width()/2",
+                        "players.Y()-400",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -3403,6 +3444,7 @@
       ],
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3484,6 +3526,94 @@
             "0.5",
             "",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetGameResolutionResizeMode"
+          },
+          "parameters": [
+            "",
+            "\"adaptWidth\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Platform_Ground",
+            "-1",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+          },
+          "parameters": [
+            "Platform_Ground",
+            "Resizable",
+            "=",
+            "map.height"
+          ]
+        },
+        {
+          "type": {
+            "value": "ResizableCapability::ResizableBehavior::SetWidth"
+          },
+          "parameters": [
+            "Platform_Ground",
+            "Resizable",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "LinkedObjects::PickObjectsLinkedTo"
+          },
+          "parameters": [
+            "",
+            "Platform_Ground",
+            "platforms",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Platform_Ground",
+            "map.width",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+          },
+          "parameters": [
+            "Platform_Ground",
+            "Resizable",
+            "=",
+            "map.height"
+          ]
+        },
+        {
+          "type": {
+            "value": "ResizableCapability::ResizableBehavior::SetWidth"
+          },
+          "parameters": [
+            "Platform_Ground",
+            "Resizable",
+            "=",
+            "1"
           ]
         }
       ]
@@ -3839,8 +3969,8 @@
                   "parameters": [
                     "",
                     "pc_name_text",
-                    "0",
-                    "0",
+                    "-1000",
+                    "-1000",
                     ""
                   ]
                 },
@@ -4436,14 +4566,60 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Apple",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Apple",
+                "players",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "players",
+                "PlayerState[THNK::PickedPlayer()].apples",
+                "=",
+                "players.PlayerState[THNK::PickedPlayer()].apples+1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Apple",
+                ""
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::ForEach",
-          "object": "Apple",
-          "conditions": [],
+          "object": "players",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosY"
+              },
+              "parameters": [
+                "players",
+                ">",
+                "map.height"
+              ]
+            }
+          ],
           "actions": [],
           "events": [
             {
@@ -4451,13 +4627,11 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "CollisionNP"
+                    "value": "THNK::UseLinkedObjects"
                   },
                   "parameters": [
-                    "players",
-                    "Apple",
                     "",
-                    "",
+                    "Whale",
                     ""
                   ]
                 }
@@ -4465,27 +4639,53 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetNumberObjectVariable"
+                    "value": "MettreXY"
                   },
                   "parameters": [
-                    "players",
-                    "PlayerState[THNK::PickedPlayer()].apples",
+                    "Whale",
                     "=",
-                    "players.PlayerState[THNK::PickedPlayer()].apples+1"
+                    "whale_spawn.X() + Random(whale_spawn.Width() - Whale.Width())",
+                    "=",
+                    "whale_spawn.Y() + Random(whale_spawn.Height() - Whale.Height())"
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
                   "type": {
-                    "value": "Delete"
+                    "value": "THNK::UseLinkedObjects"
                   },
                   "parameters": [
-                    "Apple",
+                    "",
+                    "Necromancer",
                     ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "Necromancer",
+                    "=",
+                    "necromancer_spawn.X()+Random(necromancer_spawn.Width()-Necromancer.Width())",
+                    "=",
+                    "necromancer_spawn.Y()+Random(necromancer_spawn.Height()-Necromancer.Height())"
                   ]
                 }
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         }
       ]
     }

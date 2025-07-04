@@ -7,7 +7,7 @@
     "revision": 0
   },
   "properties": {
-    "adaptGameResolutionAtRuntime": false,
+    "adaptGameResolutionAtRuntime": true,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
     "folderProject": true,
@@ -16,7 +16,7 @@
     "pixelsRounding": true,
     "projectUuid": "1c1d55da-2df3-4494-bd7f-3f12f2d6caa3",
     "scaleMode": "linear",
-    "sizeOnStartupMode": "scaleOuter",
+    "sizeOnStartupMode": "",
     "templateSlug": "starting-platformer",
     "version": "1.0.0",
     "name": "Jungle Pirate",
