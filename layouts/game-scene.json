@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.31119749424452287,
+    "zoomFactor": 0.3216911764705914,
     "windowMask": false
   },
   "objectsGroups": [
@@ -210,6 +210,11 @@
       "name": "new_id",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "camera_zoom",
+      "type": "number",
+      "value": 0.5
     }
   ],
   "instances": [
@@ -3381,7 +3386,7 @@
                     "debugtext",
                     "Text",
                     "=",
-                    "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(PlayerState.id)+\" - apples: \"+ToString(players.PlayerState.apples)+\" - old_audio_id: \"+ToString(players.PlayerState.old_audio_id) + \" - new_audio_id: \"+ToString(State.audio.id)+\"  - temp1: \"+ToString(players.PlayerState.temp1)+\" - temp2: \"+ToString(players.PlayerState.temp2)+\" - side: \"+players.PlayerState.side"
+                    "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(PlayerState.id)+\" - apples: \"+ToString(players.PlayerState.apples)+\" - old_audio_id: \"+ToString(players.PlayerState.old_audio_id) + \" - new_audio_id: \"+ToString(State.audio.id)"
                   ]
                 }
               ]
@@ -3440,7 +3445,7 @@
                       "parameters": [
                         "State.audio.x",
                         "<",
-                        "players.X()+screen_width"
+                        "players.X()+screen_width/2/camera_zoom"
                       ]
                     },
                     {
@@ -3450,7 +3455,7 @@
                       "parameters": [
                         "State.audio.x",
                         ">",
-                        "players.X()-screen_width"
+                        "players.X()-screen_width/2/camera_zoom"
                       ]
                     },
                     {
@@ -3460,7 +3465,7 @@
                       "parameters": [
                         "State.audio.y",
                         "<",
-                        "players.Y()+screen_height"
+                        "players.Y()+screen_height/2/camera_zoom"
                       ]
                     },
                     {
@@ -3470,7 +3475,7 @@
                       "parameters": [
                         "State.audio.y",
                         ">",
-                        "players.Y()-screen_height"
+                        "players.Y()-screen_height/2/camera_zoom"
                       ]
                     }
                   ],
@@ -3801,7 +3806,7 @@
           },
           "parameters": [
             "",
-            "0.5",
+            "camera_zoom",
             "",
             ""
           ]
@@ -4026,17 +4031,6 @@
                     "PlayerState[THNK::PickedPlayer()].Own",
                     "True"
                   ]
-                },
-                {
-                  "type": {
-                    "value": "SetStringObjectVariable"
-                  },
-                  "parameters": [
-                    "players",
-                    "PlayerState[THNK::PickedPlayer()].side",
-                    "=",
-                    "\"Necromancer\""
-                  ]
                 }
               ]
             },
@@ -4097,17 +4091,6 @@
                     "Whale",
                     "PlayerState[THNK::PickedPlayer()].Own",
                     "True"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetStringObjectVariable"
-                  },
-                  "parameters": [
-                    "players",
-                    "PlayerState[THNK::PickedPlayer()].side",
-                    "=",
-                    "\"Whale\""
                   ]
                 }
               ]
@@ -4866,13 +4849,11 @@
           "actions": [
             {
               "type": {
-                "value": "AddForceAL"
+                "value": "PlatformBehavior::SimulateJumpKey"
               },
               "parameters": [
                 "players",
-                "270",
-                "400",
-                ""
+                "PlatformerObject"
               ]
             }
           ]
