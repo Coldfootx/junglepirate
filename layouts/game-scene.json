@@ -140,6 +140,11 @@
           "name": "id",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "old_audio_id",
+          "type": "number",
+          "value": 0
         }
       ]
     },
@@ -163,6 +168,43 @@
           "value": 7000
         }
       ]
+    },
+    {
+      "name": "State",
+      "type": "structure",
+      "children": [
+        {
+          "name": "audio",
+          "type": "structure",
+          "children": [
+            {
+              "name": "id",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "new_id",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
@@ -246,7 +288,31 @@
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "bodyType": "Dynamic",
+          "bullet": false,
+          "fixedRotation": false,
+          "canSleep": true,
+          "shape": "Box",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "polygonOrigin": "Center",
+          "vertices": [],
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 1,
+          "masks": 1
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -309,6 +375,29 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "bodyType": "Static",
+          "bullet": false,
+          "fixedRotation": false,
+          "canSleep": true,
+          "shape": "Box",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "polygonOrigin": "Center",
+          "vertices": [],
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 1,
+          "masks": 1
+        },
+        {
           "name": "Platform",
           "type": "PlatformBehavior::PlatformBehavior",
           "canBeGrabbed": true,
@@ -359,6 +448,11 @@
             },
             {
               "name": "apples",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "old_audio_id",
               "type": "number",
               "value": 0
             }
@@ -829,6 +923,11 @@
             },
             {
               "name": "apples",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "old_audio_id",
               "type": "number",
               "value": 0
             }
@@ -2602,6 +2701,33 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "InOnScreen",
+          "type": "IsOnScreen::InOnScreen"
+        },
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "bodyType": "Dynamic",
+          "bullet": false,
+          "fixedRotation": false,
+          "canSleep": true,
+          "shape": "Box",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "polygonOrigin": "Center",
+          "vertices": [],
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 1,
+          "masks": 1
+        },
+        {
           "name": "PixelPerfectPlatformerCharacter",
           "type": "PixelPerfectMovement::PixelPerfectPlatformerCharacter",
           "PlatformerCharacter": "PlatformerObject",
@@ -3160,8 +3286,30 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"q\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "THNK::SendMessage"
+              },
+              "parameters": [
+                "",
+                "\"StartJump\"",
+                "",
+                ""
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -3184,19 +3332,7 @@
             {
               "type": "BuiltinCommonInstructions::ForEach",
               "object": "players",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "players",
-                    "PlayerState.Own",
-                    "True",
-                    "PlayerState.id"
-                  ]
-                }
-              ],
+              "conditions": [],
               "actions": [
                 {
                   "type": {
@@ -3206,7 +3342,7 @@
                     "debugtext",
                     "Text",
                     "=",
-                    "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+PlayerState.id+\" - apples: \"+ToString(players.PlayerState.apples)"
+                    "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(PlayerState.id)+\" - apples: \"+ToString(players.PlayerState.apples)+\" - old_audio_id: \"+ToString(players.PlayerState.old_audio_id) + \" - new_audio_id: \"+ToString(State.audio.id)"
                   ]
                 }
               ]
@@ -3234,9 +3370,159 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "players",
           "conditions": [],
-          "actions": []
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "THNK::UseLinkedObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Whale",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "THNK::UseLinkedObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Necromancer",
+                    ""
+                  ]
+                }
+              ],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "State.audio.id",
+                    "!=",
+                    "players.PlayerState.old_audio_id"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "State.audio.x",
+                        "<",
+                        "players.X()+screen_width"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "State.audio.x",
+                        ">",
+                        "players.X()-screen_width"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "State.audio.y",
+                        "<",
+                        "players.Y()+screen_height"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "State.audio.y",
+                        ">",
+                        "players.Y()-screen_height"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "State.audio.name",
+                            "=",
+                            "\"apple\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Coins",
+                            "players.X()",
+                            "players.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "functions::play_apple_pick"
+                          },
+                          "parameters": [
+                            "",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "players",
+                        "PlayerState.old_audio_id",
+                        "=",
+                        "State.audio.id"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "disabled": true,
@@ -3329,15 +3615,6 @@
                     }
                   ],
                   "actions": [
-                    {
-                      "type": {
-                        "value": "functions::play_apple_pick"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    },
                     {
                       "type": {
                         "value": "Delete"
@@ -3530,15 +3807,6 @@
         },
         {
           "type": {
-            "value": "SetGameResolutionResizeMode"
-          },
-          "parameters": [
-            "",
-            "\"adaptWidth\""
-          ]
-        },
-        {
-          "type": {
             "value": "Create"
           },
           "parameters": [
@@ -3614,6 +3882,25 @@
             "Resizable",
             "=",
             "1"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Apple",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Physics2::ApplyTorque"
+              },
+              "parameters": [
+                "Apple",
+                "Physics2",
+                "RandomFloatInRange(5,12)"
+              ]
+            }
           ]
         }
       ]
@@ -4556,11 +4843,13 @@
           "actions": [
             {
               "type": {
-                "value": "PlatformBehavior::SimulateJumpKey"
+                "value": "AddForceAL"
               },
               "parameters": [
                 "players",
-                "PlatformerObject"
+                "270",
+                "400",
+                ""
               ]
             }
           ]
@@ -4593,14 +4882,62 @@
                 "=",
                 "players.PlayerState[THNK::PickedPlayer()].apples+1"
               ]
-            },
+            }
+          ],
+          "events": [
             {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Apple",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "State.audio.name",
+                    "=",
+                    "\"apple\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "State.audio.x",
+                    "=",
+                    "Apple.X()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "State.audio.y",
+                    "=",
+                    "Apple.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "State.audio.id",
+                    "=",
+                    "functions::free_id(State.audio.id)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Apple",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -4755,8 +5092,21 @@
       "type": "Parallax::HorizontalTiledSpriteParallax"
     },
     {
+      "name": "InOnScreen",
+      "type": "IsOnScreen::InOnScreen"
+    },
+    {
       "name": "Opacity",
       "type": "OpacityCapability::OpacityBehavior"
+    },
+    {
+      "name": "Physics2",
+      "type": "Physics2::Physics2Behavior",
+      "gravityX": 0,
+      "gravityY": 9.8,
+      "worldScale": 100,
+      "scaleX": 100,
+      "scaleY": 100
     },
     {
       "name": "PixelPerfectPlatformerCharacter",

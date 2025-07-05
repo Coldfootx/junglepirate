@@ -1613,15 +1613,6 @@
             "5",
             ""
           ]
-        },
-        {
-          "type": {
-            "value": "AdvancedWindow::SetResizable"
-          },
-          "parameters": [
-            "no",
-            ""
-          ]
         }
       ]
     },

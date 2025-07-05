@@ -15,7 +15,55 @@
   "authorIds": [],
   "dependencies": [],
   "globalVariables": [],
-  "sceneVariables": [],
+  "sceneVariables": [
+    {
+      "name": "found_id",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "audio_id",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "State",
+      "type": "structure",
+      "children": [
+        {
+          "name": "audio",
+          "type": "structure",
+          "children": [
+            {
+              "name": "id",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "new_id",
+      "type": "number",
+      "value": 0
+    }
+  ],
   "eventsFunctions": [
     {
       "fullName": "",
@@ -91,6 +139,7 @@
       "sentence": "",
       "events": [
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -107,9 +156,221 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "5de189bcb6bd33d94771d296ecd55fd6ecebdcc3307a129c73cfe930f048ad58_Run_01.wav",
+                "",
+                "100",
+                "1"
+              ]
+            }
+          ]
         }
       ],
       "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Expression",
+      "name": "free_id",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "found_id",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "infiniteLoopWarning": true,
+          "type": "BuiltinCommonInstructions::While",
+          "whileConditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "found_id",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "found_id",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "new_id",
+                "=",
+                "RandomInRange(1111,9999)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "new_id",
+                    "=",
+                    "old_id"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "found_id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnNumber"
+              },
+              "parameters": [
+                "new_id"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Old ID",
+          "name": "old_id",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "name": "send_sound",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "State.audio.name",
+                "=",
+                "sound_name"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "State.audio.x",
+                "=",
+                "pos_x"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "State.audio.y",
+                "=",
+                "pos_y"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "State.audio.id",
+                "=",
+                "functions::free_id(State.audio.id)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Sound Name",
+          "name": "sound_name",
+          "type": "string"
+        },
+        {
+          "description": "X Position",
+          "name": "pos_x",
+          "type": "expression"
+        },
+        {
+          "description": "Y Position",
+          "name": "pos_y",
+          "type": "expression"
+        }
+      ],
       "objectGroups": []
     }
   ],

@@ -2080,6 +2080,16 @@
       "name": "game_name",
       "type": "string",
       "value": "\"Jungle Pirate\""
+    },
+    {
+      "name": "screen_width",
+      "type": "number",
+      "value": 1400
+    },
+    {
+      "name": "screen_height",
+      "type": "number",
+      "value": 720
     }
   ],
   "layouts": [
@@ -2157,6 +2167,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/behaviorremapper"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/isonscreen"
     }
   ],
   "externalLayouts": [
