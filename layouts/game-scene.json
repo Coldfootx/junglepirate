@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.3010461197182484,
+    "zoomFactor": 0.31119749424452287,
     "windowMask": false
   },
   "objectsGroups": [
@@ -145,6 +145,11 @@
           "name": "old_audio_id",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "side",
+          "type": "string",
+          "value": "0"
         }
       ]
     },
@@ -311,6 +316,10 @@
           "gravityScale": 1,
           "layers": 1,
           "masks": 1
+        },
+        {
+          "name": "SynchronizedObject",
+          "type": "THNK::SynchronizedObject"
         }
       ],
       "animations": [
@@ -455,6 +464,11 @@
               "name": "old_audio_id",
               "type": "number",
               "value": 0
+            },
+            {
+              "name": "side",
+              "type": "string",
+              "value": "0"
             }
           ]
         },
@@ -481,6 +495,16 @@
         },
         {
           "name": "apples",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "temp1",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "temp2",
           "type": "number",
           "value": 0
         }
@@ -930,8 +954,23 @@
               "name": "old_audio_id",
               "type": "number",
               "value": 0
+            },
+            {
+              "name": "side",
+              "type": "string",
+              "value": "0"
             }
           ]
+        },
+        {
+          "name": "temp1",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "temp2",
+          "type": "number",
+          "value": 0
         }
       ],
       "effects": [],
@@ -3342,7 +3381,7 @@
                     "debugtext",
                     "Text",
                     "=",
-                    "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(PlayerState.id)+\" - apples: \"+ToString(players.PlayerState.apples)+\" - old_audio_id: \"+ToString(players.PlayerState.old_audio_id) + \" - new_audio_id: \"+ToString(State.audio.id)"
+                    "\"Debug info - player_n: \"+ToString(Count(players))+\" - shaman_n: \"+ToString(Count(team_shaman))+\" - necromancer_n: \"+ToString(Count(team_necromancer))+\" - player_id: +\"+ToString(PlayerState.id)+\" - apples: \"+ToString(players.PlayerState.apples)+\" - old_audio_id: \"+ToString(players.PlayerState.old_audio_id) + \" - new_audio_id: \"+ToString(State.audio.id)+\"  - temp1: \"+ToString(players.PlayerState.temp1)+\" - temp2: \"+ToString(players.PlayerState.temp2)+\" - side: \"+players.PlayerState.side"
                   ]
                 }
               ]
@@ -3375,32 +3414,6 @@
           "conditions": [],
           "actions": [],
           "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "THNK::UseLinkedObjects"
-                  },
-                  "parameters": [
-                    "",
-                    "Whale",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "THNK::UseLinkedObjects"
-                  },
-                  "parameters": [
-                    "",
-                    "Necromancer",
-                    ""
-                  ]
-                }
-              ],
-              "actions": []
-            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -3478,18 +3491,6 @@
                         }
                       ],
                       "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Coins",
-                            "players.X()",
-                            "players.Y()",
-                            ""
-                          ]
-                        },
                         {
                           "type": {
                             "value": "functions::play_apple_pick"
@@ -4025,6 +4026,17 @@
                     "PlayerState[THNK::PickedPlayer()].Own",
                     "True"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringObjectVariable"
+                  },
+                  "parameters": [
+                    "players",
+                    "PlayerState[THNK::PickedPlayer()].side",
+                    "=",
+                    "\"Necromancer\""
+                  ]
                 }
               ]
             },
@@ -4085,6 +4097,17 @@
                     "Whale",
                     "PlayerState[THNK::PickedPlayer()].Own",
                     "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringObjectVariable"
+                  },
+                  "parameters": [
+                    "players",
+                    "PlayerState[THNK::PickedPlayer()].side",
+                    "=",
+                    "\"Whale\""
                   ]
                 }
               ]
