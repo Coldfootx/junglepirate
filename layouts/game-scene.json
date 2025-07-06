@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.9934433498259675,
+    "zoomFactor": 0.870023285985738,
     "windowMask": true
   },
   "objectsGroups": [
@@ -371,9 +371,26 @@
       "name": "text_input2",
       "persistentUuid": "eab0e605-1f41-48a5-81a7-dddfb968b673",
       "width": 0,
-      "x": 483,
-      "y": 689,
+      "x": 484,
+      "y": 692,
       "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 48,
+      "height": 30,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "copy_chat_button",
+      "persistentUuid": "38ba74de-5141-408b-bead-951ae7003ba5",
+      "width": 74,
+      "x": 845,
+      "y": 687,
+      "zOrder": 14,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -3098,7 +3115,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Welcome to the game!",
+      "string": "Welcome to the game! - Hit up Enter to talk",
       "font": "Roboto-Regular.ttf",
       "textAlignment": "left",
       "characterSize": 15,
@@ -3121,12 +3138,108 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Welcome to the game!",
+        "text": "Welcome to the game! - Hit up Enter to talk",
         "font": "Roboto-Regular.ttf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 15,
         "color": "0;0;0"
+      }
+    },
+    {
+      "assetStoreId": "1cacfe2713f10642e8079542f28282d52f1bf46ae2dc27dc6c291a2970c90971",
+      "name": "copy_chat_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "",
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Night",
+          "name": "Effect",
+          "doubleParameters": {
+            "intensity": 0.5,
+            "opacity": 0.5
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 4,
+        "BottomPadding": 10,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2
+      },
+      "childrenContent": {
+        "Hovered": {
+          "bottomMargin": 11,
+          "height": 64,
+          "leftMargin": 7,
+          "rightMargin": 7,
+          "texture": "Medieval Button Beige_Hovered.png",
+          "tiled": false,
+          "topMargin": 7,
+          "width": 192
+        },
+        "Idle": {
+          "bottomMargin": 11,
+          "height": 64,
+          "leftMargin": 7,
+          "rightMargin": 7,
+          "texture": "Medieval Button Beige_Idle.png",
+          "tiled": false,
+          "topMargin": 7,
+          "width": 192
+        },
+        "Label": {
+          "bold": true,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "string": "Copy",
+          "font": "CaesarDressing-Regular.ttf",
+          "textAlignment": "center",
+          "characterSize": 15,
+          "color": {
+            "b": 64,
+            "g": 99,
+            "r": 133
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Copy",
+            "font": "CaesarDressing-Regular.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 15,
+            "color": "133;99;64"
+          }
+        },
+        "Pressed": {
+          "bottomMargin": 7,
+          "height": 64,
+          "leftMargin": 7,
+          "rightMargin": 7,
+          "texture": "Medieval Button Beige_Pressed.png",
+          "tiled": false,
+          "topMargin": 11,
+          "width": 192
+        }
       }
     }
   ],
@@ -3177,6 +3290,9 @@
       },
       {
         "objectName": "text_input2"
+      },
+      {
+        "objectName": "copy_chat_button"
       }
     ]
   },
