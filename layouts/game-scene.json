@@ -238,6 +238,11 @@
       "name": "temp_text",
       "type": "string",
       "value": "0"
+    },
+    {
+      "name": "saying_on_animation",
+      "type": "boolean",
+      "value": false
     }
   ],
   "instances": [
@@ -3572,64 +3577,135 @@
           "conditions": [
             {
               "type": {
-                "value": "KeyPressed"
+                "value": "BooleanVariable"
               },
               "parameters": [
-                "",
-                "d"
+                "saying_on",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AnyKeyReleased"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "text_input2",
+                    "Text",
+                    "=",
+                    "text_input2.Text::Value()+LastPressedKey()"
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "THNK::SendMessage"
-              },
-              "parameters": [
-                "",
-                "\"StartRightInput\"",
-                "",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "a"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "RepeatEveryXSeconds::RepeatXTimes"
+                  },
+                  "parameters": [
+                    "",
+                    "\"timer_chat_box_animation\"",
+                    "0.5",
+                    "-1",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "saying_on_animation",
+                    "Toggle",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "saying_on_animation",
+                        "True",
+                        "="
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "text_input2",
+                        "Text",
+                        "=",
+                        "text_input2.Text::Value()+\"_\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "saying_on_animation",
+                        "True",
+                        "="
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "text_input2",
+                        "Text",
+                        "=",
+                        "SubStr(text_input2.Text::Value(),StrLength(text_input2.Text::Value()), StrLength(text_input2.Text::Value())-1)"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "THNK::SendMessage"
-              },
-              "parameters": [
-                "",
-                "\"StartLeftInput\"",
-                "",
-                ""
-              ]
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
             }
           ]
         },
@@ -3638,138 +3714,223 @@
           "conditions": [
             {
               "type": {
-                "value": "KeyPressed"
+                "inverted": true,
+                "value": "BooleanVariable"
               },
               "parameters": [
-                "",
-                "w"
+                "saying_on",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"StartRightInput\"",
+                    "",
+                    ""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "THNK::SendMessage"
-              },
-              "parameters": [
-                "",
-                "\"StartJump\"",
-                "",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"StartLeftInput\"",
+                    "",
+                    ""
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+            },
             {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "d"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"StartJump\"",
+                    "",
+                    ""
+                  ]
+                }
               ]
-            }
-          ],
-          "actions": [
+            },
             {
-              "type": {
-                "value": "THNK::SendMessage"
-              },
-              "parameters": [
-                "",
-                "\"EndRightInput\"",
-                "",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"EndRightInput\"",
+                    "",
+                    ""
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+            },
             {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "a"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"EndLeftInput\"",
+                    "",
+                    ""
+                  ]
+                }
               ]
-            }
-          ],
-          "actions": [
+            },
             {
-              "type": {
-                "value": "THNK::SendMessage"
-              },
-              "parameters": [
-                "",
-                "\"EndLeftInput\"",
-                "",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"EndJump\"",
+                    "",
+                    ""
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+            },
             {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "w"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "THNK::SendMessage"
-              },
-              "parameters": [
-                "",
-                "\"EndJump\"",
-                "",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"q\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "THNK::SendMessage"
-              },
-              "parameters": [
-                "",
-                "\"StartJump\"",
-                "",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "\"q\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"StartJump\"",
+                    "",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -3814,40 +3975,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "temp_text",
-                    "=",
-                    "text_input.Text::Value()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "THNK::SendMessage"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Say\"",
-                    "temp_text",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "text_input",
-                    "Text",
-                    "=",
-                    "\"\""
-                  ]
-                }
-              ]
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -3873,6 +4001,27 @@
                     "Text",
                     "=",
                     "\"\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "temp_text",
+                    "=",
+                    "text_input.Text::Value()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Say\"",
+                    "temp_text",
+                    ""
                   ]
                 }
               ]
@@ -3947,7 +4096,7 @@
               "parameters": [
                 "",
                 "\"timer_chat_box\"",
-                "0.25",
+                "0.1",
                 "-1",
                 ""
               ]
