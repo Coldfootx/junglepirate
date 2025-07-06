@@ -1,13 +1,13 @@
 {
-  "b": 255,
+  "b": 236,
   "disableInputWhenNotFocused": true,
   "mangledName": "Game_32Scene",
   "name": "Game Scene",
-  "r": 255,
+  "r": 195,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
   "title": "Game in progress",
-  "v": 255,
+  "v": 229,
   "uiSettings": {
     "grid": false,
     "gridType": "rectangular",
@@ -18,8 +18,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.3216911764705914,
-    "windowMask": false
+    "zoomFactor": 0.9934433498259675,
+    "windowMask": true
   },
   "objectsGroups": [
     {
@@ -62,6 +62,14 @@
       "objects": [
         {
           "name": "Platform_Ground"
+        }
+      ]
+    },
+    {
+      "name": "pc_msg",
+      "objects": [
+        {
+          "name": "pc_msg_text"
         }
       ]
     }
@@ -203,6 +211,11 @@
               "value": 0
             }
           ]
+        },
+        {
+          "name": "chat_box",
+          "type": "string",
+          "value": "0"
         }
       ]
     },
@@ -214,7 +227,17 @@
     {
       "name": "camera_zoom",
       "type": "number",
-      "value": 0.5
+      "value": 1
+    },
+    {
+      "name": "saying_on",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "temp_text",
+      "type": "string",
+      "value": "0"
     }
   ],
   "instances": [
@@ -245,7 +268,7 @@
       "persistentUuid": "ab4d9782-c351-4851-84a8-1f583ccb1dab",
       "width": 0,
       "x": 17,
-      "y": 680,
+      "y": 0,
       "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
@@ -278,6 +301,79 @@
       "x": 991,
       "y": -143,
       "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "pc_msg_text",
+      "persistentUuid": "7b27633a-0b8d-40bb-a6d4-ce3baccebedc",
+      "width": 0,
+      "x": 794,
+      "y": -315,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 222,
+      "keepRatio": true,
+      "layer": "UI",
+      "locked": true,
+      "name": "Wood_Background",
+      "persistentUuid": "ccc53b8b-b36c-4870-a148-a76c21a64249",
+      "width": 450,
+      "x": 475,
+      "y": 498,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 198,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "chat_box",
+      "persistentUuid": "939cd6f8-5e4b-48bb-963f-0e084037768b",
+      "width": 432,
+      "x": 484,
+      "y": 502,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "text_input2",
+      "persistentUuid": "eab0e605-1f41-48a5-81a7-dddfb968b673",
+      "width": 0,
+      "x": 483,
+      "y": 689,
+      "zOrder": 13,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -422,11 +518,11 @@
     },
     {
       "assetStoreId": "cd06f4c4259b5baa8fdabbef2243b310082546b70859e68c47f454fde4e1f2f6",
-      "height": 512,
+      "height": 720,
       "name": "FallTreesBackground",
       "texture": "assets\\jLXggX.png",
       "type": "TiledSpriteObject::TiledSprite",
-      "width": 1024,
+      "width": 1400,
       "variables": [],
       "effects": [],
       "behaviors": [
@@ -442,7 +538,7 @@
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
       "name": "Necromancer",
-      "preScale": 4,
+      "preScale": 2,
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [
@@ -911,7 +1007,7 @@
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
       "name": "Whale",
-      "preScale": 1.8,
+      "preScale": 0.9,
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [
@@ -2706,7 +2802,7 @@
       "string": "player_id",
       "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
       "textAlignment": "left",
-      "characterSize": 45,
+      "characterSize": 17,
       "color": {
         "b": 0,
         "g": 0,
@@ -2730,7 +2826,7 @@
         "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
-        "characterSize": 45,
+        "characterSize": 17,
         "color": "0;0;0"
       }
     },
@@ -2744,10 +2840,6 @@
       "variables": [],
       "effects": [],
       "behaviors": [
-        {
-          "name": "InOnScreen",
-          "type": "IsOnScreen::InOnScreen"
-        },
         {
           "name": "Physics2",
           "type": "Physics2::Physics2Behavior",
@@ -2861,6 +2953,181 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "pc_msg_text",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Text",
+      "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 17,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Text",
+        "font": "05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 17,
+        "color": "255;0;0"
+      }
+    },
+    {
+      "assetStoreId": "08d9802965c3beec17416c0e0ff3f459710d2e2bf155c0e0ece4459d4efa98ec",
+      "bottomMargin": 64,
+      "height": 192,
+      "leftMargin": 64,
+      "name": "Wood_Background",
+      "rightMargin": 64,
+      "texture": "9patch_Wood Background_all_64.png",
+      "tiled": true,
+      "topMargin": 64,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 192,
+      "variables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "name": "text_input",
+      "type": "TextInput::TextInputObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "initialValue": "",
+        "placeholder": "Press Enter to start typing",
+        "fontResourceName": "Roboto-Regular.ttf",
+        "fontSize": 15,
+        "inputType": "text",
+        "textColor": "255;255;255",
+        "fillColor": "65;32;32",
+        "fillOpacity": 255,
+        "borderColor": "0;0;0",
+        "borderOpacity": 255,
+        "borderWidth": 1,
+        "readOnly": false,
+        "disabled": false,
+        "paddingX": 2,
+        "paddingY": 1,
+        "textAlign": "left",
+        "maxLength": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "chat_box",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Welcome to the game!",
+      "font": "Roboto-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 15,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Welcome to the game!",
+        "font": "Roboto-Regular.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 15,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "text_input2",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Welcome to the game!",
+      "font": "Roboto-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 15,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Welcome to the game!",
+        "font": "Roboto-Regular.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 15,
+        "color": "0;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -2894,7 +3161,22 @@
         "objectName": "pc_name_text"
       },
       {
+        "objectName": "pc_msg_text"
+      },
+      {
         "objectName": "Apple"
+      },
+      {
+        "objectName": "Wood_Background"
+      },
+      {
+        "objectName": "text_input"
+      },
+      {
+        "objectName": "chat_box"
+      },
+      {
+        "objectName": "text_input2"
       }
     ]
   },
@@ -3009,6 +3291,16 @@
                 "pc_name_text",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "THNK::UseLinkedObjects"
+              },
+              "parameters": [
+                "",
+                "pc_msg_text",
+                ""
+              ]
             }
           ],
           "actions": [
@@ -3023,11 +3315,22 @@
                 "=",
                 "players.Y()-pc_name.Height()"
               ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "pc_msg_text",
+                "=",
+                "players.X()+players.Width()/2-pc_msg.Width()/2",
+                "=",
+                "players.Y()-pc_msg.Height()-pc_name.Height()"
+              ]
             }
           ]
         },
         {
-          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -3360,6 +3663,111 @@
           "conditions": [
             {
               "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Return\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "saying_on",
+                "Toggle",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "saying_on",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "temp_text",
+                    "=",
+                    "text_input.Text::Value()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "THNK::SendMessage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Say\"",
+                    "temp_text",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "text_input",
+                    "Text",
+                    "=",
+                    "\"\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "saying_on",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "text_input",
+                    "Text",
+                    "=",
+                    "\"\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "RepeatEveryXSeconds::RepeatTimer::Repeat2"
               },
               "parameters": [
@@ -3409,6 +3817,36 @@
                 "map.height",
                 "",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "RepeatEveryXSeconds::RepeatXTimes"
+              },
+              "parameters": [
+                "",
+                "\"timer_chat_box\"",
+                "0.25",
+                "-1",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "chat_box",
+                "Text",
+                "=",
+                "State.chat_box"
               ]
             }
           ]
@@ -3893,6 +4331,7 @@
       ],
       "events": [
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::ForEach",
           "object": "Apple",
           "conditions": [],
@@ -3908,6 +4347,11 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         }
       ]
     },
@@ -4781,6 +5225,36 @@
           ]
         },
         {
+          "infiniteLoopWarning": true,
+          "type": "BuiltinCommonInstructions::While",
+          "whileConditions": [
+            {
+              "type": {
+                "value": "THNK::OnMessage"
+              },
+              "parameters": [
+                "",
+                "\"Say\"",
+                "temp_text",
+                ""
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "State.chat_box",
+                "=",
+                "temp_text"
+              ]
+            }
+          ]
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5076,6 +5550,23 @@
         }
       ],
       "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "UI",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
     }
   ],
   "behaviorsSharedData": [
@@ -5094,10 +5585,6 @@
     {
       "name": "HorizontalTiledSpriteParallax",
       "type": "Parallax::HorizontalTiledSpriteParallax"
-    },
-    {
-      "name": "InOnScreen",
-      "type": "IsOnScreen::InOnScreen"
     },
     {
       "name": "Opacity",
